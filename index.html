@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/globals.css" />
+    <link rel="stylesheet" href="./assets/fonts/fonts.css" />
+    <link rel="stylesheet" href="./styles/variables.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <title>Interactive Form</title>
+  </head>
+  <body>
+    <div class="form-container">
+      <div class="pre-screen">
+        <h1>Pre-screen</h1>
+        <div class="progress-procent">0%</div>
+        <div class="progress-bar"></div>
+      </div>
+
+      <div class="main-window">
+        <div class="employee__container">
+          <div class="employee__img-container">
+            <img
+              class="employee__photo"
+              src="./assets/images/png/008393881a51e16ceea4444e728a41c80def3ce9.png"
+            />
+            <div class="employee__online"></div>
+          </div>
+          <div class="employee__message-container">
+            <svg
+              width="12"
+              height="32"
+              viewBox="0 0 12 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 32V0H1.29124C0.578106 0 0 0.578106 0 1.29124C0 1.71196 0.201216 2.08568 0.512662 2.32144C5.24202 5.75532 12 13.8663 12 32Z"
+                fill="#5B5CCB"
+                class="message-box-cursor"
+              />
+            </svg>
+
+            <p class="employee__message">How much do you want to borrow?</p>
+          </div>
+        </div>
+
+        <div class="form__steps"></div>
+
+        <button class="button" type="button">
+          <div class="button__text-container">
+            <p>Continue</p>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.63 12H19.63"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="button__arrow"
+              />
+              <path
+                d="M12.63 5L19.63 12L12.63 19"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="button__arrow"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <div class="form">
+      <form class="step1" id="step1">
+        
+      </form>
+    </div>
+    <script src="./scrips/index.js"></script>
+  </body>
+</html>

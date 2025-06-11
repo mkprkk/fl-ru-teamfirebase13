@@ -1,0 +1,9 @@
+:root {
+    --main-color: #5B5CCB; 
+    --form-text-color: white;
+    --main-window-padding: 16px 32px 32px 32px; 
+    --employee-border-color: #E2E2EA;
+    --employee-img-border-radius: 50%;
+    --button-hover-bg-color: #FB6FF9; 
+    --button-hover-text-color: black;
+}
