@@ -2,8 +2,16 @@
     --main-color: #5B5CCB; 
     --form-text-color: white;
     --main-window-padding: 16px 32px 32px 32px; 
+    --main-font-weight: 600;
     --employee-border-color: #E2E2EA;
     --employee-img-border-radius: 50%;
     --button-hover-bg-color: #FB6FF9; 
     --button-hover-text-color: black;
+
+    --form-radio-bg-color: #F0F0F8;
+    --form-radio-bg-color-checked: #00B951;
+    --form-border-color: #E2E2EA;
+    --form-additional-info-color: #3B3B43;
+    --form-additional-info-color2: #B8B8C1; 
+
 }

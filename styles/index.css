@@ -1,5 +1,7 @@
+/* --- Анимации --- */
 @keyframes online {
-  0%, 50% {
+  0%,
+  50% {
     opacity: 1;
     scale: 0.9;
   }
@@ -9,6 +11,7 @@
   }
 }
 
+/* --- Основные контейнеры --- */
 .form-container {
   width: 434px;
   border: 1px solid black;
@@ -16,6 +19,11 @@
   overflow: hidden;
 }
 
+.main-window {
+  padding: var(--main-window-padding, 32px);
+}
+
+/* --- Пре-экран (pre-screen) и прогресс --- */
 .pre-screen {
   padding: 32px;
   background-color: var(--main-color, #5b5ccb);
@@ -30,10 +38,7 @@
 .pre-screen h1 {
   font-size: 15px;
   grid-column: 1;
-}
-
-.progress-procent {
-  grid-column: 2;
+  font-weight: var(--main-font-weight, 600);
 }
 
 .progress-bar {
@@ -45,6 +50,11 @@
   grid-column: span 2;
 }
 
+.progress-procent {
+  grid-column: 2;
+}
+
+/* --- Кнопки --- */
 .button {
   background-color: var(--main-color, #5b5ccb);
   width: 100%;
@@ -54,19 +64,10 @@
   position: relative;
 }
 
-/* .button::before {
-  content: "";
-  width: 99.5%;
-  height: 96%;
-  border: orange 1px solid;
-  position: absolute;
-  left: 0;
-  top: 0;
-  border-radius: 14px;
-  z-index: -1;
-  transition: scale 0.5s;
-  transition: opacity 0.5s;
-} */
+.button__arrow {
+  stroke: var(--form-text-color, white);
+  transition: stroke 0.3s;
+}
 
 .button__text-container {
   padding-block: 16px;
@@ -74,62 +75,33 @@
   display: flex;
   place-content: center;
   font-size: 17px;
+  font-weight: var(--main-font-weight, 600);
   gap: 6px;
   transition: color 0.3s;
-  transition: scale 0.1s ;
+  transition: scale 0.1s;
 }
 
 .button:hover {
   background-color: var(--button-hover-color, #fb6ff9);
 }
 
+.button:hover .button__arrow {
+  stroke: var(--button-hover-text-color, black);
+}
+
 .button:hover .button__text-container {
   color: var(--button-hover-text-color, black);
 }
-
-/* .button:active::before {
-  scale: 1.5;
-  opacity: 0;
-} */
 
 .button:active .button__text-container {
   scale: 0.9;
 }
 
-.button__arrow {
-  stroke: var(--form-text-color, white);
-  transition: stroke 0.3s;
-}
-
-.button:hover .button__arrow {
-  stroke: var(--button-hover-text-color, black);
-}
-
-.main-window {
-  padding: var(--main-window-padding, 32px);
-}
-
+/* --- employee --- */
 .employee__container {
   display: flex;
   margin-bottom: 16px;
   gap: 5px;
-}
-
-.employee__message-container {
-  display: flex;
-  align-items: center;
-}
-
-.employee__message {
-  background-color: var(--main-color, #5b5ccb);
-  color: var(--form-text-color, white);
-  padding: 20px 24px 20px 24px;
-  font-size: 17px;
-  border-radius: 16px;
-}
-
-.message-box-cursor {
-  fill: var(--main-color, #5b5ccb);
 }
 
 .employee__img-container {
@@ -167,4 +139,234 @@
   position: absolute;
   left: -1px;
   bottom: -1px;
+}
+
+.employee__message-container {
+  display: flex;
+  align-items: center;
+}
+
+.employee__message {
+  background-color: var(--main-color, #5b5ccb);
+  color: var(--form-text-color, white);
+  padding: 20px 24px 20px 24px;
+  font-size: 17px;
+  font-weight: var(--main-font-weight, 600);
+  border-radius: 16px;
+}
+
+.message-box-cursor {
+  fill: var(--main-color, #5b5ccb);
+}
+
+/* --- Форма --- */
+.form label {
+  font-weight: 700;
+}
+
+.form__label-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 17px;
+}
+
+.form__label-icon {
+  min-width: 40px;
+  height: 40px;
+  background-color: var(--form-checkbox-bg-color, #f0f0f8);
+  border-radius: 50%;
+  background-image: url("../assets/images/svg/dollar.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 10px;
+}
+
+/* --- Шаги формы --- */
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.margin-top {
+  margin-top: 15px;
+}
+
+.padding-block {
+  padding-block: 15px 19px;
+}
+
+.width100 {
+  width: 100%;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.icon--dollar {
+  background-image: url("../assets/images/svg/dollar.svg");
+}
+.icon--mail {
+  background-image: url("../assets/images/svg/mail.svg");
+}
+.icon--phone {
+  background-image: url("../assets/images/svg/phone.svg");
+}
+.icon--lock {
+  background-image: url("../assets/images/svg/lock.svg");
+}
+.icon--name {
+  background-image: url("../assets/images/svg/name.svg");
+}
+.icon--location {
+  background-image: url("../assets/images/svg/location.svg");
+}
+.icon--work {
+  background-image: url("../assets/images/svg/work.svg");
+}
+.icon--work-mob {
+  background-image: url("../assets/images/svg/work-mobile.svg");
+}
+.icon--bank {
+  background-image: url("../assets/images/svg/bank.svg");
+}
+
+.icon--score {
+  background-image: url("../assets/images/svg/score.svg");
+}
+
+.step16 img {
+  padding-block: 16px;
+}
+
+/* --- Контейнеры ввода --- */
+.phone-code,
+.phone-input input {
+  font-size: 12px;
+}
+
+.phone-disclaimer {
+  font-size: 13px;
+  margin-block: 4px 15px;
+  color: var(--form-additional-info-color, #3b3b43);
+}
+
+.phone-disclaimer-bottom {
+  padding-block: 27px 20px;
+  font-size: 13px;
+  color: var(--form-additional-info-color, #3b3b43);
+  border-top: 1px solid var(--form-border-color, #e2e2ea);
+}
+
+.phone-input {
+  gap: 8px;
+}
+
+/* --- Селекты и кастомные стрелки --- */
+.step15__select-container,
+.step19__input-container,
+.step19__select-container {
+  position: relative;
+}
+
+.step15__select,
+.step19__select {
+  color: var(--form-additional-info-color2, #b8b8c1);
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.step15__select-container::after,
+.step19__select-container::after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background-image: url("../assets/images/svg/select-arrow.svg");
+  position: absolute;
+  right: 0;
+  top: 35%;
+}
+
+/* --- Разделители и бордеры шагов --- */
+.step7__input-container:not(:last-child),
+.step8__input-container:not(:last-child),
+.step12__container:not(:last-child) .step12__input-container,
+.step15__container:not(:last-child) .step15__select-container,
+.step18__input-container,
+.step19__container .step19__input-container {
+  border-bottom: 1px solid var(--form-border-color, #e2e2ea);
+}
+
+/* --- SSN и Routing --- */
+.ssn-disclaimer,
+.routing-disclaimer {
+  font-size: 13px;
+  color: var(--form-additional-info-color, #3b3b43);
+  margin-top: 4px;
+}
+
+.ssn-lock {
+  stroke: var(--form-additional-info-color, #3b3b43);
+}
+
+.ssn-input-container {
+  color: var(--form-additional-info-color2, #b8b8c1);
+}
+
+.ssn-disclaimer-container {
+  gap: 8px;
+}
+
+.ssn-input {
+  border-bottom: 1px solid var(--form-additional-info-color2, #b8b8c1);
+  width: 2.5em;
+  font-size: 15px;
+}
+
+.routing-input {
+  border-bottom: 1px solid var(--form-additional-info-color2, #b8b8c1);
+  width: 3.6875em;
+}
+
+/* --- Список выбора (ul/li) --- */
+.form__ul {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0 20px 9.5px;
+}
+
+.form__li {
+  display: flex;
+  gap: 20px;
+  font-weight: 400;
+  font-size: 15px;
+  align-items: center;
+}
+
+.form__li p {
+  width: 100%;
+  padding-block: 10px;
+}
+
+.form__ul .form__li:not(:last-child) p {
+  border-bottom: 1px solid var(--form-border-color, #e2e2ea);
+}
+
+.form__li input[type="radio"] {
+  min-width: 24px;
+  height: 24px;
+  background-color: var(--form-checkbox-bg-color, #f0f0f8);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.form__li input[type="radio"]:checked {
+  background-color: var(--form-radio-bg-color-checked, #00b951);
+  background-image: url("../assets/images/svg/checked.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
