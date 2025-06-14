@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./assets/fonts/fonts.css" />
     <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/calendar.css" />
     <title>Interactive Form</title>
   </head>
   <body>
@@ -40,631 +41,958 @@
                 class="message-box-cursor"
               />
             </svg>
-
-            <p class="employee__message">How much do you want to borrow?</p>
+            <p class="employee__message"></p>
           </div>
         </div>
 
-        <div class="form__steps">
-          <form role="form" class="step15" id="step15">
-            <div class="step15__container flex">
-              <div class="form__label-icon margin-top"></div>
-              <div
-                class="step15__select-container width100 flex column padding-block"
-              >
-                <label for="payFrequency">How Often Are You Paid?</label>
-                <select class="step15__select" name="payFrequency">
-                  <option value="weekly">Weekly</option>
-                  <option value="biweekly">Bi-Weekly</option>
-                  <option value="monthly">Monthly</option>
-                </select>
+        <div class="form-steps">
+          <!-- Step 1: How much do you want to borrow? -->
+          <div id="step1">
+            <form role="form">
+              <div class="form__label-container">
+                <div class="form__label-icon"></div>
+                <p>Desired loan amount</p>
               </div>
-            </div>
-            <div class="step15__container flex">
-              <div class="form__label-icon margin-top"></div>
-              <div
-                class="step15__select-container width100 flex column padding-block"
-              >
-                <label>How is Your Paycheck Received?</label>
-                <select class="step15__select" name="payMethod">
-                  <option value="directDeposit">Direct Deposit</option>
-                  <option value="check">Check</option>
-                  <option value="cash">Cash</option>
-                </select>
+              <ul class="form__ul">
+                <li>
+                  <label class="form__li-label">
+                    <input type="radio" name="loanAmount" value="200-500" />
+                    <div><p>$200 — $500</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input type="radio" name="loanAmount" value="500-1000" />
+                    <div><p>$500 — $1,000</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input type="radio" name="loanAmount" value="1000-2500" />
+                    <div><p>$1,000 — $2,500</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input type="radio" name="loanAmount" value="2500-5000" />
+                    <div><p>$2,500 — $5,000</p></div>
+                  </label>
+                </li>
+              </ul>
+            </form>
+          </div>
+
+          <!-- Step 2: Let us help you find all available funding options -->
+          <div id="step2">
+            <form role="form">
+              <div class="form__label-container">
+                <div class="form__label-icon"></div>
+                <p>Would you also consider a lower amount?</p>
               </div>
-            </div>
-            <div class="step15__container flex">
-              <div class="form__label-icon margin-top"></div>
-              <div
-                class="step15__select-container width100 flex column padding-block"
-              >
-                <label>Monthly gross income</label>
-                <select class="step15__select" name="monthlyIncome">
-                  <option value="under1000">Under $1,000</option>
-                  <option value="1000-2000">$1,000 - $2,000</option>
-                  <option value="2000-3000">$2,000 - $3,000</option>
-                  <option value="over3000">Over $3,000</option>
-                </select>
+              <ul class="form__ul">
+                <li>
+                  <label class="form__li-label">
+                    <input type="radio" name="considerLowerAmount" value="no" />
+                    <div><p>No</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="considerLowerAmount"
+                      value="yes"
+                    />
+                    <div><p>Yes</p></div>
+                  </label>
+                </li>
+              </ul>
+            </form>
+          </div>
+
+          <!-- Step 3: What is the purpose of this loan? -->
+          <div id="step3">
+            <form role="form">
+              <ul class="form__ul">
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="loanPurpose"
+                      value="debt_consolidation"
+                    />
+                    <div><p>Debt consolidation</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="loanPurpose"
+                      value="bills_emergency"
+                    />
+                    <div>
+                      <p>Everyday Bills/Emergency</p>
+                    </div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="loanPurpose"
+                      value="credit_card_consolidation"
+                    />
+                    <div><p>Credit card consolidation</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="loanPurpose"
+                      value="auto_purchase"
+                    />
+                    <div><p>Auto purchase</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="loanPurpose"
+                      value="home_improvement"
+                    />
+                    <div><p>Home improvement</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input type="radio" name="loanPurpose" value="medical" />
+                    <div><p>Medical</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input type="radio" name="loanPurpose" value="business" />
+                    <div><p>Business</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input type="radio" name="loanPurpose" value="taxes" />
+                    <div><p>Taxes</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="loanPurpose"
+                      value="rent_mortgage"
+                    />
+                    <div><p>Rent or mortgage</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input type="radio" name="loanPurpose" value="other" />
+                    <div><p>Other</p></div>
+                  </label>
+                </li>
+              </ul>
+            </form>
+          </div>
+
+          <!-- Step 4: Where to send the loan confirmation? -->
+          <div id="step4">
+            <form role="form" class="flex padding-block">
+              <div class="form__label-icon icon--mail"></div>
+              <label class="flex column width100">
+                <p>Your Email</p>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="e.g. johnsmith@gmail.com"
+                />
+              </label>
+            </form>
+          </div>
+
+          <!-- Step 5: Please enter your phone # -->
+          <div id="step5">
+            <form role="form" class="flex column">
+              <div class="flex">
+                <div class="form__label-icon icon--phone"></div>
+                <div>
+                  <label class="flex column width100">
+                    <p>Your current phone number is</p>
+                    <div class="phone-input flex">
+                      <p class="phone-code">US +1</p>
+                      <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Enter mobile number"
+                      />
+                    </div>
+                  </label>
+                  <p class="phone-disclaimer">
+                    Your phone is never shared without permission
+                  </p>
+                </div>
               </div>
-            </div>
+              <p class="phone-disclaimer-bottom">
+                By providing your number and clicking "Continue", you consent to
+                receive calls, texts and pre-recorded messages from us and third
+                party marketers we contract with.**
+              </p>
+            </form>
+          </div>
+
+          <!-- Step 6: Please verify your identity. -->
+          <div id="step6">
+            <form role="form" class="flex padding-block">
+              <div class="form__label-icon icon--lock"></div>
+              <label class="flex column width100"
+                ><p>Last 4 digits of your SSN</p>
+                <div class="ssn-input-container flex">
+                  <p class="card-code">×××-××-</p>
+                  <input name="ssnLast4" class="ssn-input" maxlength="4" />
+                </div>
+                <div class="flex align-center" style="gap: 8px">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12.6667 7.33334H3.33333C2.59695 7.33334 2 7.9303 2 8.66668V13.3333C2 14.0697 2.59695 14.6667 3.33333 14.6667H12.6667C13.403 14.6667 14 14.0697 14 13.3333V8.66668C14 7.9303 13.403 7.33334 12.6667 7.33334Z"
+                      stroke="black"
+                      stroke-width="1.33333"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="ssn-lock"
+                    />
+                    <path
+                      d="M4.66699 7.33334V4.66668C4.66699 3.78262 5.01818 2.93478 5.6433 2.30965C6.26842 1.68453 7.11627 1.33334 8.00033 1.33334C8.88438 1.33334 9.73223 1.68453 10.3573 2.30965C10.9825 2.93478 11.3337 3.78262 11.3337 4.66668V7.33334"
+                      stroke="black"
+                      stroke-width="1.33333"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="ssn-lock"
+                    />
+                  </svg>
+                  <p class="disclaimer">This will NOT affect your credit</p>
+                </div>
+              </label>
+            </form>
+          </div>
+
+          <!-- Step 7: What is your full legal name? -->
+          <div id="step7">
+            <form role="form" class="flex">
+              <div class="form__label-icon icon--name margin-top"></div>
+              <div class="width100">
+                <label class="form-step-divider padding-block flex column"
+                  ><p>First Name</p>
+                  <input type="text" name="firstName" placeholder="e.g. John" />
+                </label>
+                <label class="form-step-divider padding-block flex column"
+                  ><p>Last Name</p>
+                  <input type="text" name="lastName" placeholder="e.g. Smith" />
+                </label>
+                <label class="form-step-divider padding-block flex column"
+                  ><p>Date of Birth</p>
+                  <input
+                    type="text"
+                    name="dateOfBirth"
+                    placeholder="MM / DD / YYYY"
+                    class="date-input"
+                    maxlength="14"
+                  />
+                </label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Step 8: What is your current residential address? -->
+          <div id="step8">
+            <form role="form" class="flex">
+              <div class="form__label-icon icon--location margin-top"></div>
+              <div class="width100">
+                <label class="form-step-divider padding-block flex column"
+                  ><p>Zip Code</p>
+                  <input type="text" name="zipCode" placeholder="e.g. 90210" />
+                </label>
+                <label class="form-step-divider padding-block flex column"
+                  ><p>Street Address</p>
+                  <input
+                    type="text"
+                    name="streetAddress"
+                    placeholder="e.g. 123 Main st"
+                  />
+                </label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Step 9: How long have you lived there? -->
+          <div id="step9">
+            <form role="form">
+              <ul class="form__ul">
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="residenceDuration"
+                      value="over_5_years"
+                    />
+                    <div><p>Over 5 Years</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="residenceDuration"
+                      value="2_5_years"
+                    />
+                    <div><p>2 to 5 Years</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="residenceDuration"
+                      value="1_2_years"
+                    />
+                    <div><p>1 to 2 Years</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="residenceDuration"
+                      value="less_than_year"
+                    />
+                    <div><p>Less Than A Year</p></div>
+                  </label>
+                </li>
+              </ul>
+            </form>
+          </div>
+
+          <!-- Step 10: Do you rent or own your residence? -->
+          <div id="step10">
+            <form role="form">
+              <ul class="form__ul">
+                <li>
+                  <label class="form__li-label">
+                    <input type="radio" name="residenceType" value="rent" />
+                    <div><p>Rent</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input type="radio" name="residenceType" value="own" />
+                    <div><p>Own</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="residenceType"
+                      value="with_parents"
+                    />
+                    <div><p>I live with parents or relatives</p></div>
+                  </label>
+                </li>
+              </ul>
+            </form>
+          </div>
+
+          <!-- Step 11: What is your income type? -->
+          <div id="step11">
+            <form role="form">
+              <ul class="form__ul">
+                <li>
+                  <label class="form__li-label">
+                    <input type="radio" name="incomeType" value="job_income" />
+                    <div><p>Job income</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="incomeType"
+                      value="self_employment"
+                    />
+                    <div><p>Self employement</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input type="radio" name="incomeType" value="benefits" />
+                    <div><p>Benefits</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="incomeType"
+                      value="military_pay"
+                    />
+                    <div><p>Military Pay</p></div>
+                  </label>
+                </li>
+              </ul>
+            </form>
+          </div>
+
+          <!-- Step 12: Please provide your job information -->
+          <div id="step12">
+            <form role="form">
+              <div class="flex step-parent">
+                <div class="form__label-icon icon--work margin-top"></div>
+                <label
+                  class="form-step-divider width100 padding-block flex column"
+                  ><p>Employer name</p>
+                  <input
+                    type="text"
+                    name="employerName"
+                    placeholder="e.g. Company"
+                  />
+                </label>
+              </div>
+              <div class="flex step-parent">
+                <div class="form__label-icon icon--work margin-top"></div>
+                <label
+                  class="form-step-divider width100 padding-block flex column"
+                  ><p>Job title</p>
+                  <input
+                    type="text"
+                    name="jobTitle"
+                    placeholder="e.g. Manager"
+                  />
+                </label>
+              </div>
+              <div class="flex step-parent">
+                <div class="form__label-icon icon--work-mob margin-top"></div>
+                <div class="flex column">
+                  <label
+                    class="form-step-divider width100 padding-block flex column"
+                    ><p>Work mobile</p>
+                    <div class="phone-input flex">
+                      <p class="phone-code">US +1</p>
+                      <input
+                        type="tel"
+                        name="workPhone"
+                        placeholder="Enter mobile number"
+                      />
+                    </div>
+                    <p class="phone-disclaimer">
+                      We never contact your employer
+                    </p>
+                  </label>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Step 13: How long have you been with your current employer? -->
+          <div id="step13">
+            <form role="form">
+              <ul class="form__ul">
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="employmentDuration"
+                      value="5_years_or_more"
+                    />
+                    <div><p>5 Years or more</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="employmentDuration"
+                      value="3_4_years"
+                    />
+                    <div><p>3 – 4 Years</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="employmentDuration"
+                      value="1_2_years"
+                    />
+                    <div><p>1 – 2 Years</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="employmentDuration"
+                      value="3_12_months"
+                    />
+                    <div><p>3 – 12 Months</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="employmentDuration"
+                      value="3_months_or_less"
+                    />
+                    <div><p>3 Months or less</p></div>
+                  </label>
+                </li>
+              </ul>
+            </form>
+          </div>
+
+          <!-- Step 14: Please select the next payday date -->
+          <div id="step14">
+            <form class="calendar flex column align-center">
+              <div class="calendar-header">
+                <button type="button" onclick="prevMonth()">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="calendar-arrow flipped-arrow"
+                  >
+                    <path
+                      d="M7.5 15L12.5 10L7.5 5"
+                      stroke="#0068FC"
+                      stroke-width="2.29167"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <span id="month-year"></span>
+                <button type="button" onclick="nextMonth()">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="calendar-arrow"
+                  >
+                    <path
+                      d="M7.5 15L12.5 10L7.5 5"
+                      stroke="#0068FC"
+                      stroke-width="2.29167"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="calendar-grid" id="calendar-grid"></div>
+              <input type="hidden" name="paydayDate" id="paydayDate" />
+            </form>
+          </div>
+
+          <!-- Step 15: Please provide your job information -->
+          <div id="step15">
+            <form role="form">
+              <div class="flex step-parent">
+                <div class="form__label-icon margin-top"></div>
+                <div
+                  class="select-arrow form-step-divider width100 flex column padding-block"
+                >
+                  <p>How Often Are You Paid?</p>
+                  <select
+                    class="select-style"
+                    id="payFrequency"
+                    name="payFrequency"
+                  >
+                    <option value="weekly">Weekly</option>
+                    <option value="biweekly">Bi-Weekly</option>
+                    <option value="monthly">Monthly</option>
+                  </select>
+                </div>
+              </div>
+              <div class="flex step-parent">
+                <div class="form__label-icon margin-top"></div>
+                <div
+                  class="select-arrow form-step-divider width100 flex column padding-block"
+                >
+                  <p>How is Your Paycheck Received?</p>
+                  <select class="select-style" name="payMethod">
+                    <option value="directDeposit">Direct Deposit</option>
+                    <option value="check">Check</option>
+                    <option value="cash">Cash</option>
+                  </select>
+                </div>
+              </div>
+              <div class="step-parent flex">
+                <div class="form__label-icon margin-top"></div>
+                <div
+                  class="select-arrow form-step-divider width100 flex column padding-block"
+                >
+                  <p>Monthly gross income</p>
+                  <select class="select-style" name="monthlyIncome">
+                    <option value="under1000">Under $1,000</option>
+                    <option value="1000-2000">$1,000 - $2,000</option>
+                    <option value="2000-3000">$2,000 - $3,000</option>
+                    <option value="over3000">Over $3,000</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Step 16: Where would you like the funds to be deposited? -->
+          <div id="step16">
+            <form role="form">
+              <img
+                src="./assets/images/svg/example.svg"
+                style="padding-block: 16px"
+              />
+              <div class="flex padding-block">
+                <div class="form__label-icon icon--bank"></div>
+                <label class="flex column"
+                  ><p>Bank Routing Number</p>
+                  <div class="routing-input">
+                    <input type="text" name="routingNumber" />
+                  </div>
+                  <p class="disclaimer">
+                    Your ABA/Routing number can be found on most bank statements
+                    as well as on the bottom of your checks.
+                  </p>
+                </label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Step 17: How long have you been with IOWA STATE BANK? -->
+          <div id="step17">
+            <form role="form">
+              <ul class="form__ul">
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="bankDuration"
+                      value="more_2_years"
+                    />
+                    <div><p>More than 2 years</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input type="radio" name="bankDuration" value="1_2_years" />
+                    <div><p>1 – 2 years</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="bankDuration"
+                      value="6_12_months"
+                    />
+                    <div><p>6 – 12 Months</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="bankDuration"
+                      value="3_6_months"
+                    />
+                    <div><p>3 – 6 Months</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="bankDuration"
+                      value="1_3_months"
+                    />
+                    <div><p>1 – 3 Months</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input
+                      type="radio"
+                      name="bankDuration"
+                      value="less_1_month"
+                    />
+                    <div><p>Less than 1 Month</p></div>
+                  </label>
+                </li>
+              </ul>
+            </form>
+          </div>
+
+          <!-- Step 18: Please specify your bank account number -->
+          <div id="step18">
+            <form role="form">
+              <div class="margin-top">
+                <div class="flex">
+                  <div class="form__label-icon icon--bank margin-top"></div>
+                  <label class="alone-border width100 padding-block flex column"
+                    ><p>Bank Account Number</p>
+                    <input
+                      type="text"
+                      name="accountNumber"
+                      placeholder="4 to 30 digits"
+                    />
+                  </label>
+                </div>
+
+                <div class="flex align-center">
+                  <div class="form__label-icon icon--bank"></div>
+                  <p>Account type</p>
+                </div>
+                <ul class="form__ul">
+                  <li>
+                    <label class="form__li-label">
+                      <input type="radio" name="accountType" value="savings" />
+                      <div><p>Savings</p></div>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="form__li-label">
+                      <input type="radio" name="accountType" value="checking" />
+                      <div><p>Checking</p></div>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </form>
+          </div>
+
+          <!-- Step 19: Please verify your identity -->
+          <div id="step19">
+            <form role="form">
+              <div class="flex">
+                <div class="form__label-icon icon--bank margin-top"></div>
+                <label class="alone-border flex column width100 padding-block"
+                  ><p>Driver's license or state id</p>
+                  <input
+                    type="text"
+                    name="driverId"
+                    placeholder="e.g. 123456789"
+                  />
+                </label>
+              </div>
+              <div class="flex">
+                <div class="form__label-icon icon--bank margin-top"></div>
+                <div class="select-arrow flex column width100 padding-block">
+                  <p>Issuing state</p>
+                  <select class="select-style" name="issuingState">
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <!-- ...добавьте остальные штаты... -->
+                  </select>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Step 20: Please estimate your credit score -->
+          <div id="step20">
+            <form role="form">
+              <div class="form__label-container">
+                <div class="form__label-icon icon--score"></div>
+                <label>Credit Score</label>
+              </div>
+              <ul class="form__ul">
+                <li>
+                  <label class="form__li-label">
+                    <input type="radio" name="creditScore" value="poor" />
+                    <div><p>Poor (639 or less)</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input type="radio" name="creditScore" value="fair" />
+                    <div><p>Fair (640 – 679)</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input type="radio" name="creditScore" value="good" />
+                    <div><p>Good (680 – 719)</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input type="radio" name="creditScore" value="excellent" />
+                    <div><p>Excellent (720 +)</p></div>
+                  </label>
+                </li>
+                <li>
+                  <label class="form__li-label">
+                    <input type="radio" name="creditScore" value="unknown" />
+                    <p>I don't know</p>
+                  </label>
+                </li>
+              </ul>
+            </form>
+          </div>
+        </div>
+
+        <!-- Step 21: Enter your SSN to complete your request -->
+        <div id="step21">
+          <form role="form" class="flex padding-block">
+            <div class="form__label-icon icon--lock"></div>
+            <label class="flex column width100">
+              <p>Social Security Number</p>
+              <input
+                type="text"
+                name="socialSecurityNumber"
+                id="ssnInput"
+                placeholder="___-__-____"
+                maxlength="11"
+                pattern="\d{3}-\d{2}-\d{4}"
+                title="SSN should be in format 123-45-6789"
+              />
+              <p class="disclaimer">
+                It's required to protect you from fraudulent use of your
+                personal data
+              </p>
+            </label>
           </form>
         </div>
 
-        <button class="button" type="button">
-          <div class="button__text-container">
-            <p>Continue</p>
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5.63 12H19.63"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="button__arrow"
-              />
-              <path
-                d="M12.63 5L19.63 12L12.63 19"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="button__arrow"
-              />
-            </svg>
-          </div>
-        </button>
+        <!-- Final step (0): Now, simply press the “Request Cash” button. You’re all set! -->
+        <div id="step22">
+          <form role="form"></form>
+        </div>
+
+        <template id="continue-button-template">
+          <button class="button" type="button">
+            <div class="button__text-container">
+              <p>Continue</p>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.63 12H19.63"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="button__svg"
+                />
+                <path
+                  d="M12.63 5L19.63 12L12.63 19"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="button__svg"
+                />
+              </svg>
+            </div>
+          </button>
+        </template>
+
+        <template id="final-button-template">
+          <button class="button" type="button" href="https://www.google.com/">
+            <div class="button__text-container">
+              <p>Request Cash</p>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20 6L9 17L4 12"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="button__svg"
+                />
+              </svg>
+            </div>
+          </button> </template
+        >`
+
+        <template id="form-error">
+          <div class="form-error"></div>
+        </template>
       </div>
     </div>
 
-    <div class="form">
-      <!-- Step 1 -->
-      <form role="form" class="step1" id="step1">
-        <div class="form__label-container">
-          <div class="form__label-icon"></div>
-          <label>Desired loan amount</label>
-        </div>
-        <ul class="form__ul">
-          <li class="form__li">
-            <input type="radio" name="step1" />
-            <p>$200 — $500</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step1" />
-            <p>$500 — $1,000</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step1" />
-            <p>$1,000 — $2,500</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step1" />
-            <p>$2,500 — $5,000</p>
-          </li>
-        </ul>
-      </form>
-
-      <!-- Step 2 -->
-      <form role="form" class="step2" id="step2">
-        <div class="form__label-container">
-          <div class="form__label-icon"></div>
-          <label>Would you also consider a lower amount?</label>
-        </div>
-        <ul class="form__ul">
-          <li class="form__li">
-            <input type="radio" name="step2" />
-            <p>No</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step2" />
-            <p>Yes</p>
-          </li>
-        </ul>
-      </form>
-
-      <!-- Step 3 -->
-      <form role="form" class="step3" id="step3">
-        <ul class="form__ul">
-          <li class="form__li">
-            <input type="radio" name="step3" />
-            <p>Debt consolidation</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step3" />
-            <p>Everyday Bills/Emergency</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step3" />
-            <p>Credit card consolidation</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step3" />
-            <p>Auto purchase</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step3" />
-            <p>Home improvement</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step3" />
-            <p>Medical</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step3" />
-            <p>Business</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step3" />
-            <p>Taxes</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step3" />
-            <p>Rent or mortgage</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step3" />
-            <p>Other</p>
-          </li>
-        </ul>
-      </form>
-
-      <!-- Step 4 -->
-      <form role="form" class="step4 flex padding-block" id="step4">
-        <div class="form__label-icon icon--mail"></div>
-        <div class="flex column">
-          <label>Your Email</label>
-          <input
-            type="email"
-            name="step4"
-            placeholder="e.g. johnsmith@gmail.com"
+    <dialog
+      class="flex column email-dialog email-dialog__is-animated"
+      id="emailDialog"
+    >
+      <div class="email-dialog__content flex column align-center">
+        <svg
+          width="56"
+          height="56"
+          viewBox="0 0 56 56"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M27.9998 51.3333C40.8865 51.3333 51.3332 40.8866 51.3332 28C51.3332 15.1133 40.8865 4.66666 27.9998 4.66666C15.1132 4.66666 4.6665 15.1133 4.6665 28C4.6665 40.8866 15.1132 51.3333 27.9998 51.3333Z"
+            stroke="#0068FC"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           />
-        </div>
-      </form>
-
-      <!-- Step 5 -->
-      <form role="form" class="step5 flex column" id="step5">
-        <div class="flex">
-          <div class="form__label-icon icon--phone"></div>
-          <div class="flex column">
-            <label>Your current phone number is</label>
-            <div class="phone-input">
-              <p class="phone-code">US +1</p>
-              <input
-                type="tel"
-                name="step5"
-                placeholder="Enter mobile number"
-              />
-            </div>
-            <p class="phone-disclaimer">
-              Your phone is never shared without permission
-            </p>
-          </div>
-        </div>
-        <p class="phone-disclaimer-bottom">
-          By providing your number and clicking "Continue", you consent to
-          receive calls, texts and pre-recorded messages from us and third party
-          marketers we contract with.**
-        </p>
-      </form>
-
-      <!-- Step 6 -->
-      <form role="form" class="step6 flex padding-block" id="step6">
-        <div class="form__label-icon icon--lock"></div>
-        <div class="ssn-container">
-          <label>Last 4 digits of your SSN</label>
-          <div class="ssn-input-container flex">
-            <p class="card-code">×××-××-</p>
-            <input name="step6" class="ssn-input" maxlength="4" />
-          </div>
-          <div class="ssn-disclaimer-container flex align-center">
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12.6667 7.33334H3.33333C2.59695 7.33334 2 7.9303 2 8.66668V13.3333C2 14.0697 2.59695 14.6667 3.33333 14.6667H12.6667C13.403 14.6667 14 14.0697 14 13.3333V8.66668C14 7.9303 13.403 7.33334 12.6667 7.33334Z"
-                stroke="black"
-                stroke-width="1.33333"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="ssn-lock"
-              />
-              <path
-                d="M4.66699 7.33334V4.66668C4.66699 3.78262 5.01818 2.93478 5.6433 2.30965C6.26842 1.68453 7.11627 1.33334 8.00033 1.33334C8.88438 1.33334 9.73223 1.68453 10.3573 2.30965C10.9825 2.93478 11.3337 3.78262 11.3337 4.66668V7.33334"
-                stroke="black"
-                stroke-width="1.33333"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="ssn-lock"
-              />
-            </svg>
-            <p class="ssn-disclaimer">This will NOT affect your credit</p>
-          </div>
-        </div>
-      </form>
-
-      <!-- Step 7 -->
-      <form role="form" class="step7 flex" id="step7">
-        <div class="form__label-icon icon--name margin-top"></div>
-        <div class="width100">
-          <div class="step7__input-container padding-block">
-            <label>First Name</label>
-            <div class="name-input">
-              <input type="text" name="firstName" placeholder="e.g. John" />
-            </div>
-          </div>
-          <div class="step7__input-container padding-block">
-            <label>Last Name</label>
-            <div class="lastname-input">
-              <input type="text" name="lastName" placeholder="e.g. Smith" />
-            </div>
-          </div>
-          <div class="step7__input-container padding-block">
-            <label>Date of Birth</label>
-            <div>
-              <input
-                type="text"
-                name="date"
-                placeholder="MM / DD / YYYY"
-                class="date-input"
-              />
-            </div>
-          </div>
-        </div>
-      </form>
-
-      <!-- Step 8 -->
-      <form role="form" class="step8 flex" id="step8">
-        <div class="form__label-icon icon--location margin-top"></div>
-        <div class="width100">
-          <div class="step8__input-container padding-block">
-            <label>Zip Code</label>
-            <div class="name-input">
-              <input type="text" name="zipCode" placeholder="e.g. 90210" />
-            </div>
-          </div>
-          <div class="step8__input-container padding-block">
-            <label>Street Address</label>
-            <div class="lastname-input">
-              <input
-                type="text"
-                name="streetAddress"
-                placeholder="e.g. 123 Main st"
-              />
-            </div>
-          </div>
-        </div>
-      </form>
-
-      <!-- Step 9 -->
-      <form role="form" class="step9" id="step9">
-        <ul class="form__ul">
-          <li class="form__li">
-            <input type="radio" name="step9" />
-            <p>Over 5 Years</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step9" />
-            <p>2 to 5 Years</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step9" />
-            <p>1 to 2 Years</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step9" />
-            <p>Less Than A Year</p>
-          </li>
-        </ul>
-      </form>
-
-      <!-- Step 10 -->
-      <form role="form" class="step10" id="step10">
-        <ul class="form__ul">
-          <li class="form__li">
-            <input type="radio" name="step10" />
-            <p>Rent</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step10" />
-            <p>Own</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step10" />
-            <p>I live with parents or relatives</p>
-          </li>
-        </ul>
-      </form>
-
-      <!-- Step 11 -->
-      <form role="form" class="step11" id="step11">
-        <ul class="form__ul">
-          <li class="form__li">
-            <input type="radio" name="step11" />
-            <p>Job income</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step11" />
-            <p>Self employement</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step11" />
-            <p>Benefis</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step11" />
-            <p>Military Pay</p>
-          </li>
-        </ul>
-      </form>
-
-      <!-- Step 12 -->
-      <form role="form" class="step12" id="step12">
-        <div class="step12__container flex">
-          <div class="form__label-icon icon--work margin-top"></div>
-          <div class="step12__input-container width100 padding-block">
-            <label>Employer name</label>
-            <div class="lastname-input">
-              <input
-                type="text"
-                name="employerName"
-                placeholder="e.g. Company"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="step12__container flex">
-          <div class="form__label-icon icon--work margin-top"></div>
-          <div class="step12__input-container width100 padding-block">
-            <label>Job title</label>
-            <div class="lastname-input">
-              <input type="text" name="jobTitle" placeholder="e.g. Manager" />
-            </div>
-          </div>
-        </div>
-        <div class="step12__container flex">
-          <div class="form__label-icon icon--work-mob margin-top"></div>
-          <div class="step12__input-container width100 padding-block">
-            <div class="flex column">
-              <label>Work mobile</label>
-              <div class="phone-input flex">
-                <p class="phone-code">US +1</p>
-                <input
-                  type="tel"
-                  name="step5"
-                  placeholder="Enter mobile number"
-                />
-              </div>
-              <p class="phone-disclaimer">We never contact your employer</p>
-            </div>
-          </div>
-        </div>
-      </form>
-
-      <!-- Step 13. Не должно быть кнопки Continue -->
-      <form role="form" class="step13" id="step13">
-        <ul class="form__ul">
-          <li class="form__li">
-            <input type="radio" name="step13" />
-            <p>5 Years or more</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step13" />
-            <p>3 – 4 Years</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step13" />
-            <p>1 – 2 Years</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step13" />
-            <p>3 – 12 Months</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step13" />
-            <p>3 Months or less</p>
-          </li>
-        </ul>
-      </form>
-
-      <!-- Step 14 -->
-      <form role="form" class="step14" id="step14"></form>
-
-      <!-- Step 15 -->
-      <form role="form" class="step15" id="step15">
-        <div class="step15__container flex">
-          <div class="form__label-icon margin-top"></div>
-          <div
-            class="step15__select-container width100 flex column padding-block"
-          >
-            <label for="payFrequency">How Often Are You Paid?</label>
-            <select class="step15__select" name="payFrequency">
-              <option value="weekly">Weekly</option>
-              <option value="biweekly">Bi-Weekly</option>
-              <option value="monthly">Monthly</option>
-            </select>
-          </div>
-        </div>
-        <div class="step15__container flex">
-          <div class="form__label-icon margin-top"></div>
-          <div
-            class="step15__select-container width100 flex column padding-block"
-          >
-            <label>How is Your Paycheck Received?</label>
-            <select class="step15__select" name="payMethod">
-              <option value="directDeposit">Direct Deposit</option>
-              <option value="check">Check</option>
-              <option value="cash">Cash</option>
-            </select>
-          </div>
-        </div>
-        <div class="step15__container flex">
-          <div class="form__label-icon margin-top"></div>
-          <div
-            class="step15__select-container width100 flex column padding-block"
-          >
-            <label>Monthly gross income</label>
-            <select class="step15__select" name="monthlyIncome">
-              <option value="under1000">Under $1,000</option>
-              <option value="1000-2000">$1,000 - $2,000</option>
-              <option value="2000-3000">$2,000 - $3,000</option>
-              <option value="over3000">Over $3,000</option>
-            </select>
-          </div>
-        </div>
-      </form>
-
-      <!-- Step 16 -->
-      <form role="form" class="step16" id="step16">
-        <img src="./assets/images/svg/example.svg" />
-        <div class="flex padding-block">
-          <div class="form__label-icon icon--bank"></div>
-          <div class="step16__input-container">
-            <label>Bank Routing Number</label>
-            <div class="routing-input">
-              <input type="text" name="routingNumber" />
-            </div>
-            <p class="routing-disclaimer">
-              Your ABA/Routing number can be found on most bank statements as
-              well as on the bottom of your checks.
-            </p>
-          </div>
-        </div>
-      </form>
-
-      <!-- Step 17. Не должно быть кнопки Continue -->
-      <form role="form" class="step17" id="step17">
-        <ul class="form__ul">
-          <li class="form__li">
-            <input type="radio" name="step16" />
-            <p>More than 2 years</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step16" />
-            <p>1 – 2 years</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step16" />
-            <p>6 – 12 Months</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step16" />
-            <p>3 – 6 Months</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step16" />
-            <p>1 – 3 Months</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step16" />
-            <p>Less than 1 Month</p>
-          </li>
-        </ul>
-      </form>
-
-      <!-- Step 18 -->
-      <form role="form" class="step18" id="step18">
-        <div class="step18__container margin-top">
-          <div class="flex">
-            <div class="form__label-icon icon--bank margin-top"></div>
-            <div class="step18__input-container width100 padding-block">
-              <label>Bank Account Number</label>
-              <div class="bank-acc-input">
-                <input
-                  type="text"
-                  name="accountNumber"
-                  placeholder="4 to 30 digits"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div class="step18__input-container">
-            <div class="step18__label-container flex align-center">
-              <div class="form__label-icon icon--bank"></div>
-              <label>Account type</label>
-            </div>
-            <ul class="form__ul">
-              <li class="form__li">
-                <input type="radio" name="accountTypeRadio" value="savings" />
-                <p>Savings</p>
-              </li>
-              <li class="form__li">
-                <input type="radio" name="accountTypeRadio" value="checking" />
-                <p>Checking</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </form>
-
-      <!-- Step 19 -->
-      <form role="form" class="step19" id="step19">
-        <div class="step19__container flex">
-          <div class="form__label-icon icon--bank margin-top"></div>
-          <div
-            class="step19__input-container flex column width100 padding-block"
-          >
-            <label>Driver's license or state id</label>
-            <div class="lastname-input">
-              <input type="text" name="driverId" placeholder="e.g. 123456789" />
-            </div>
-          </div>
-        </div>
-        <div class="step19__container flex">
-          <div class="form__label-icon icon--bank margin-top"></div>
-          <div
-            class="step19__select-container flex column width100 padding-block"
-          >
-            <label>Issuing state</label>
-            <select class="step19__select" name="issuingState">
-              <option value="AL">Alabama</option>
-              <option value="AK">Alaska</option>
-              <option value="AZ">Arizona</option>
-              <!-- ...добавьте остальные штаты... -->
-            </select>
-          </div>
-        </div>
-      </form>
-
-      <!-- Step 20. Не должно быть кнопки Continue -->
-      <form role="form" class="step20" id="step20">
-        <div class="form__label-container">
-          <div class="form__label-icon icon--score"></div>
-          <label>Credit Score</label>
-        </div>
-        <ul class="form__ul">
-          <li class="form__li">
-            <input type="radio" name="step20" value="poor" />
-            <p>Poor (639 or less)</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step20" value="fair" />
-            <p>Fair (640 – 679)</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step20" value="good" />
-            <p>Good (680 – 719)</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step20" value="excellent" />
-            <p>Excellent (720 +)</p>
-          </li>
-          <li class="form__li">
-            <input type="radio" name="step20" value="unknown" />
-            <p>I don't know</p>
-          </li>
-        </ul>
-      </form>
-    </div>
-    <script src="./scrips/index.js"></script>
+          <path
+            d="M21.21 21C21.7585 19.4405 22.8413 18.1256 24.2665 17.288C25.6917 16.4504 27.3674 16.1442 28.9967 16.4236C30.626 16.7031 32.1039 17.5502 33.1685 18.8149C34.2331 20.0796 34.8158 21.6802 34.8133 23.3333C34.8133 28 27.8133 30.3333 27.8133 30.3333"
+            stroke="#0068FC"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M28 39.6667H28.0233"
+            stroke="#0068FC"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <h2>Please double-check your email address is correct</h2>
+        <p class="email"></p>
+      </div>
+      <div class="email-dialog__button-container align-center flex">
+        <button class="email-dialog__button-confirm"><p>Confirm</p></button>
+        <button class="email-dialog__button-edit"><p>Edit</p></button>
+      </div>
+    </dialog>
+    <script src="./scrips/initForm.js"></script>
+    <script src="./scrips/handleErrors.js"></script>
+    <script src="./scrips/utils.js"></script>
+    <script src="./scrips/calendar.js"></script>
   </body>
 </html>

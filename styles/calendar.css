@@ -1,0 +1,80 @@
+.calendar {
+  background: white;
+  padding-block: 58px 16px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.calendar-header {
+  display: flex;
+  align-self: end;
+  /* justify-self: center; */
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.calendar-header button {
+  width: 20px;
+  height: 20px;
+}
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 40px);
+  column-gap: 13px;
+}
+.calendar-day {
+  width: 40px;
+  height: 40px;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: color 0.3s, scale 0.3s, filter 0.3s;
+}
+.calendar-day.disabled,
+.calendar-day.empty,
+.calendar-day.header {
+  font-size: 11.5px;
+  font-weight: 400;
+  cursor:default;
+  text-transform: uppercase;
+}
+.calendar-day.disabled {
+  /* background: #eee; */
+  color: #aaa;
+}
+
+.calendar-day:not(.header):not(.disabled):not(.empty):hover {
+  background: #007bff;
+  color: white;
+  scale: 1.05;
+  filter: brightness(1.2);
+}
+.calendar-day.selected {
+  background: #007bff;
+  color: white;
+}
+
+.calendar-day:not(.header):not(.disabled):not(.empty):active {
+  scale: 0.95;
+  filter: brightness(0.9);
+}
+
+.calendar-arrow {
+  cursor: pointer;
+  transition: scale 0.2s, filter 0.2s;
+}
+
+.calendar-arrow:hover {
+  filter: brightness(1.2);
+  scale: 1.2;
+}
+
+.flipped-arrow {
+  transform: rotate(180deg);
+}

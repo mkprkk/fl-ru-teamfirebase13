@@ -14,9 +14,19 @@ p {
   margin: 0;
 }
 
+dialog {
+  padding: 0;
+  border: none;
+}
+
 button {
   background-color: initial;
   border: none;
+  padding: 0;
+}
+
+button:focus {
+  outline: none;
 }
 
 ul {
