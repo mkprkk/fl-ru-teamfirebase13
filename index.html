@@ -12,10 +12,21 @@
   </head>
   <body>
     <div class="form-container">
-      <div class="pre-screen">
-        <h1>Pre-screen</h1>
-        <div class="progress-procent">0%</div>
-        <div class="progress-bar"></div>
+      <div class="flex progress-container">
+        <div class="progress" data-group="preScreen">
+          <h1>Pre-screen</h1>
+          <div class="progress-procent"></div>
+          <div class="progress-bar-empty">
+            <div class="progress-bar"></div>
+          </div>
+        </div>
+        <div class="progress" data-group="bankDetails">
+          <h1>Bank Details</h1>
+          <div class="progress-procent"></div>
+          <div class="progress-bar-empty">
+            <div class="progress-bar"></div>
+          </div>
+        </div>
       </div>
 
       <div class="main-window">
@@ -209,12 +220,16 @@
             <form role="form" class="flex padding-block">
               <div class="form__label-icon icon--mail"></div>
               <label class="flex column width100">
-                <p>Your Email</p>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="e.g. johnsmith@gmail.com"
-                />
+                <div class="form__label-container">
+                  <p>Your Email</p>
+                </div>
+                <div class="form__text-input">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="e.g. johnsmith@gmail.com"
+                  />
+                </div>
               </label>
             </form>
           </div>
@@ -226,14 +241,19 @@
                 <div class="form__label-icon icon--phone"></div>
                 <div>
                   <label class="flex column width100">
-                    <p>Your current phone number is</p>
-                    <div class="phone-input flex">
+                    <div class="form__label-container">
+                      <p>Your current phone number is</p>
+                    </div>
+                    <div class="phone-input flex align-center">
                       <p class="phone-code">US +1</p>
-                      <input
-                        type="tel"
-                        name="phone"
-                        placeholder="Enter mobile number"
-                      />
+                      <div class="form__text-input">
+                        <input
+                          type="tel"
+                          name="phone"
+                          placeholder="Enter mobile number"
+                          maxlength="10"
+                        />
+                      </div>
                     </div>
                   </label>
                   <p class="phone-disclaimer">
@@ -253,8 +273,10 @@
           <div id="step6">
             <form role="form" class="flex padding-block">
               <div class="form__label-icon icon--lock"></div>
-              <label class="flex column width100"
-                ><p>Last 4 digits of your SSN</p>
+              <label class="flex column width100">
+                <div class="form__label-container">
+                  <p>Last 4 digits of your SSN</p>
+                </div>
                 <div class="ssn-input-container flex">
                   <p class="card-code">×××-××-</p>
                   <input name="ssnLast4" class="ssn-input" maxlength="4" />
@@ -295,23 +317,43 @@
             <form role="form" class="flex">
               <div class="form__label-icon icon--name margin-top"></div>
               <div class="width100">
-                <label class="form-step-divider padding-block flex column"
-                  ><p>First Name</p>
-                  <input type="text" name="firstName" placeholder="e.g. John" />
+                <label class="form-step-divider padding-block flex column">
+                  <div class="form__label-container">
+                    <p>First Name</p>
+                  </div>
+                  <div class="form__text-input">
+                    <input
+                      type="text"
+                      name="firstName"
+                      placeholder="e.g. John"
+                    />
+                  </div>
                 </label>
-                <label class="form-step-divider padding-block flex column"
-                  ><p>Last Name</p>
-                  <input type="text" name="lastName" placeholder="e.g. Smith" />
+                <label class="form-step-divider padding-block flex column">
+                  <div class="form__label-container">
+                    <p>Last Name</p>
+                  </div>
+                  <div class="form__text-input">
+                    <input
+                      type="text"
+                      name="lastName"
+                      placeholder="e.g. Smith"
+                    />
+                  </div>
                 </label>
-                <label class="form-step-divider padding-block flex column"
-                  ><p>Date of Birth</p>
-                  <input
-                    type="text"
-                    name="dateOfBirth"
-                    placeholder="MM / DD / YYYY"
-                    class="date-input"
-                    maxlength="14"
-                  />
+                <label class="form-step-divider padding-block flex column">
+                  <div class="form__label-container">
+                    <p>Date of Birth</p>
+                  </div>
+                  <div class="form__text-input">
+                    <input
+                      type="text"
+                      name="dateOfBirth"
+                      placeholder="MM / DD / YYYY"
+                      class="date-input"
+                      maxlength="14"
+                    />
+                  </div>
                 </label>
               </div>
             </form>
@@ -322,17 +364,29 @@
             <form role="form" class="flex">
               <div class="form__label-icon icon--location margin-top"></div>
               <div class="width100">
-                <label class="form-step-divider padding-block flex column"
-                  ><p>Zip Code</p>
-                  <input type="text" name="zipCode" placeholder="e.g. 90210" />
+                <label class="form-step-divider padding-block flex column">
+                  <div class="form__label-container">
+                    <p>Zip Code</p>
+                  </div>
+                  <div class="form__text-input">
+                    <input
+                      type="text"
+                      name="zipCode"
+                      placeholder="e.g. 90210"
+                    />
+                  </div>
                 </label>
-                <label class="form-step-divider padding-block flex column"
-                  ><p>Street Address</p>
-                  <input
-                    type="text"
-                    name="streetAddress"
-                    placeholder="e.g. 123 Main st"
-                  />
+                <label class="form-step-divider padding-block flex column">
+                  <div class="form__label-container">
+                    <p>Street Address</p>
+                  </div>
+                  <div class="form__text-input">
+                    <input
+                      type="text"
+                      name="streetAddress"
+                      placeholder="e.g. 123 Main st"
+                    />
+                  </div>
                 </label>
               </div>
             </form>
@@ -463,24 +517,34 @@
                 <div class="form__label-icon icon--work margin-top"></div>
                 <label
                   class="form-step-divider width100 padding-block flex column"
-                  ><p>Employer name</p>
-                  <input
-                    type="text"
-                    name="employerName"
-                    placeholder="e.g. Company"
-                  />
+                >
+                  <div class="form__label-container">
+                    <p>Employer name</p>
+                  </div>
+                  <div class="form__text-input">
+                    <input
+                      type="text"
+                      name="employerName"
+                      placeholder="e.g. Company"
+                    />
+                  </div>
                 </label>
               </div>
               <div class="flex step-parent">
                 <div class="form__label-icon icon--work margin-top"></div>
                 <label
                   class="form-step-divider width100 padding-block flex column"
-                  ><p>Job title</p>
-                  <input
-                    type="text"
-                    name="jobTitle"
-                    placeholder="e.g. Manager"
-                  />
+                >
+                  <div class="form__label-container">
+                    <p>Job title</p>
+                  </div>
+                  <div class="form__text-input">
+                    <input
+                      type="text"
+                      name="jobTitle"
+                      placeholder="e.g. Manager"
+                    />
+                  </div>
                 </label>
               </div>
               <div class="flex step-parent">
@@ -488,14 +552,20 @@
                 <div class="flex column">
                   <label
                     class="form-step-divider width100 padding-block flex column"
-                    ><p>Work mobile</p>
-                    <div class="phone-input flex">
+                  >
+                    <div class="form__label-container">
+                      <p>Work mobile</p>
+                    </div>
+                    <div class="phone-input flex align-center">
                       <p class="phone-code">US +1</p>
-                      <input
-                        type="tel"
-                        name="workPhone"
-                        placeholder="Enter mobile number"
-                      />
+                      <div class="form__text-input">
+                        <input
+                          type="tel"
+                          name="workPhone"
+                          placeholder="Enter mobile number"
+                          maxlength="10"
+                        />
+                      </div>
                     </div>
                     <p class="phone-disclaimer">
                       We never contact your employer
@@ -619,7 +689,9 @@
                 <div
                   class="select-arrow form-step-divider width100 flex column padding-block"
                 >
-                  <p>How Often Are You Paid?</p>
+                  <div class="form__label-container">
+                    <p>How Often Are You Paid?</p>
+                  </div>
                   <select
                     class="select-style"
                     id="payFrequency"
@@ -636,7 +708,9 @@
                 <div
                   class="select-arrow form-step-divider width100 flex column padding-block"
                 >
-                  <p>How is Your Paycheck Received?</p>
+                  <div class="form__label-container">
+                    <p>How is Your Paycheck Received?</p>
+                  </div>
                   <select class="select-style" name="payMethod">
                     <option value="directDeposit">Direct Deposit</option>
                     <option value="check">Check</option>
@@ -649,7 +723,9 @@
                 <div
                   class="select-arrow form-step-divider width100 flex column padding-block"
                 >
-                  <p>Monthly gross income</p>
+                  <div class="form__label-container">
+                    <p>Monthly gross income</p>
+                  </div>
                   <select class="select-style" name="monthlyIncome">
                     <option value="under1000">Under $1,000</option>
                     <option value="1000-2000">$1,000 - $2,000</option>
@@ -670,10 +746,12 @@
               />
               <div class="flex padding-block">
                 <div class="form__label-icon icon--bank"></div>
-                <label class="flex column"
-                  ><p>Bank Routing Number</p>
-                  <div class="routing-input">
-                    <input type="text" name="routingNumber" />
+                <label class="flex column">
+                  <div class="form__label-container">
+                    <p>Bank Routing Number</p>
+                  </div>
+                  <div class="routing-input form__text-input">
+                    <input type="text" name="routingNumber" maxlength="9" />
                   </div>
                   <p class="disclaimer">
                     Your ABA/Routing number can be found on most bank statements
@@ -754,19 +832,28 @@
               <div class="margin-top">
                 <div class="flex">
                   <div class="form__label-icon icon--bank margin-top"></div>
-                  <label class="alone-border width100 padding-block flex column"
-                    ><p>Bank Account Number</p>
-                    <input
-                      type="text"
-                      name="accountNumber"
-                      placeholder="4 to 30 digits"
-                    />
+                  <label
+                    class="alone-border width100 padding-block flex column"
+                  >
+                    <div class="form__label-container">
+                      <p>Bank Account Number</p>
+                    </div>
+                    <div class="form__text-input">
+                      <input
+                        type="text"
+                        name="accountNumber"
+                        placeholder="4 to 30 digits"
+                        maxlength="30"
+                      />
+                    </div>
                   </label>
                 </div>
 
                 <div class="flex align-center">
                   <div class="form__label-icon icon--bank"></div>
-                  <p>Account type</p>
+                  <div class="form__label-container">
+                    <p>Account type</p>
+                  </div>
                 </div>
                 <ul class="form__ul">
                   <li>
@@ -791,19 +878,26 @@
             <form role="form">
               <div class="flex">
                 <div class="form__label-icon icon--bank margin-top"></div>
-                <label class="alone-border flex column width100 padding-block"
-                  ><p>Driver's license or state id</p>
-                  <input
-                    type="text"
-                    name="driverId"
-                    placeholder="e.g. 123456789"
-                  />
+                <label class="alone-border flex column width100 padding-block">
+                  <div class="form__label-container">
+                    <p>Driver's license or state id</p>
+                  </div>
+                  <div class="form__text-input">
+                    <input
+                      type="text"
+                      name="driverId"
+                      placeholder="e.g. 123456789"
+                      maxlength="9"
+                    />
+                  </div>
                 </label>
               </div>
               <div class="flex">
                 <div class="form__label-icon icon--bank margin-top"></div>
                 <div class="select-arrow flex column width100 padding-block">
-                  <p>Issuing state</p>
+                  <div class="form__label-container">
+                    <p>Issuing state</p>
+                  </div>
                   <select class="select-style" name="issuingState">
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
@@ -850,7 +944,7 @@
                 <li>
                   <label class="form__li-label">
                     <input type="radio" name="creditScore" value="unknown" />
-                    <p>I don't know</p>
+                    <div><p>I don't know</p></div>
                   </label>
                 </li>
               </ul>
@@ -863,16 +957,20 @@
           <form role="form" class="flex padding-block">
             <div class="form__label-icon icon--lock"></div>
             <label class="flex column width100">
-              <p>Social Security Number</p>
-              <input
-                type="text"
-                name="socialSecurityNumber"
-                id="ssnInput"
-                placeholder="___-__-____"
-                maxlength="11"
-                pattern="\d{3}-\d{2}-\d{4}"
-                title="SSN should be in format 123-45-6789"
-              />
+              <div class="form__label-container">
+                <p>Social Security Number</p>
+              </div>
+              <div class="form__text-input">
+                <input
+                  type="text"
+                  name="socialSecurityNumber"
+                  id="ssnInput"
+                  placeholder="___-__-____"
+                  maxlength="11"
+                  pattern="\d{3}-\d{2}-\d{4}"
+                  title="SSN should be in format 123-45-6789"
+                />
+              </div>
               <p class="disclaimer">
                 It's required to protect you from fraudulent use of your
                 personal data
@@ -881,7 +979,7 @@
           </form>
         </div>
 
-        <!-- Final step (0): Now, simply press the “Request Cash” button. You’re all set! -->
+        <!-- Final step: Now, simply press the “Request Cash” button. You’re all set! -->
         <div id="step22">
           <form role="form"></form>
         </div>
@@ -919,7 +1017,11 @@
         </template>
 
         <template id="final-button-template">
-          <button class="button" type="button" href="https://www.google.com/">
+          <button
+            class="button"
+            type="button"
+            onclick="window.location.href='https://www.google.com/'"
+          >
             <div class="button__text-container">
               <p>Request Cash</p>
               <svg
@@ -939,8 +1041,8 @@
                 />
               </svg>
             </div>
-          </button> </template
-        >`
+          </button>
+        </template>
 
         <template id="form-error">
           <div class="form-error"></div>
@@ -994,5 +1096,6 @@
     <script src="./scrips/handleErrors.js"></script>
     <script src="./scrips/utils.js"></script>
     <script src="./scrips/calendar.js"></script>
+    <script src="./scrips/pre-screen.js"></script>
   </body>
 </html>

@@ -89,29 +89,61 @@ body {
 }
 
 /* --- Пре-экран (pre-screen) и прогресс --- */
-.pre-screen {
-  padding: 32px;
+
+.progress-container {
   background-color: var(--main-color, #5b5ccb);
   color: var(--form-text-color, white);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress {
+  width: 100%;
+  padding: 32px;
   display: grid;
   grid-template-rows: repeat(1fr, 2);
   grid-template-columns: repeat(1fr, 2);
   gap: 9px;
   justify-content: space-between;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out,
+    width 0.4s ease-in-out;
+  opacity: 1;
 }
-.pre-screen h1 {
+
+.progress.hidden-group {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+.progress h1 {
   font-size: 15px;
+  min-width: 120px;
   grid-column: 1;
   font-weight: var(--main-font-weight, 600);
 }
-.progress-bar {
+.progress-bar-empty {
   width: 100%;
   height: 6px;
   background-color: black;
   border-radius: 16px;
   grid-row: 2;
   grid-column: span 2;
+  position: relative;
+  transition: transform s;
+  overflow: hidden;
 }
+
+.progress-bar {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #fb6ff9;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-out; /* Добавлено для плавности */
+}
+
 .progress-procent {
   grid-column: 2;
 }
@@ -143,7 +175,7 @@ body {
 .button:hover {
   background-color: var(--button-hover-color, #fb6ff9);
 }
-.button:hover .button__arrow {
+.button:hover .button__svg {
   stroke: var(--button-hover-text-color, black);
 }
 .button:hover .button__text-container {
@@ -224,6 +256,7 @@ body {
   align-items: center;
   gap: 12px;
   font-size: 17px;
+  font-weight: 700;
 }
 .form__label-icon {
   min-width: 40px;
@@ -301,6 +334,11 @@ body {
 .phone-input {
   gap: 8px;
 }
+.form__text-input {
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--form-additional-info-color2, #b8b8c1);
+}
 
 /* --- Селекты и кастомные стрелки --- */
 .select-style {
@@ -347,7 +385,7 @@ body {
 }
 .routing-input {
   border-bottom: 1px solid var(--form-additional-info-color2, #b8b8c1);
-  width: 3.6875em;
+  width: 5em;
 }
 
 /* --- Список выбора (ul/li) --- */
@@ -361,7 +399,6 @@ body {
   gap: 20px;
   width: 100%;
   align-items: center;
-  font-weight: 400;
   font-size: 15px;
 }
 
@@ -371,6 +408,7 @@ body {
 }
 
 .form__li-label p {
+  font-weight: 400;
   transition: color 0.125s, scale 0.125s;
 }
 .form__li-label:hover p {
@@ -427,6 +465,7 @@ body {
   animation: smooth-error 1s ease-out;
 }
 
+/* --- Модальное окно --- */
 .email-dialog {
   width: 320px;
   background-color: white;
@@ -466,7 +505,7 @@ body:has(.email-dialog[open]) {
 
 .email {
   font-size: 15px;
-  color: #3B3B43;
+  color: #3b3b43;
 }
 
 .email-dialog__button-container button {
