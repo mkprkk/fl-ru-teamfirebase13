@@ -177,6 +177,22 @@ function finishForm() {
 
 // === Buttons ===
 
+let currentEnterHandler = null;
+
+function submitStep(idx) {
+  // покажем ошибки, если есть
+  if (!validateStep(idx, true)) return;
+
+  // дальше логика без изменений
+  if (currentStepIdx === 4) {
+    emailModal(formData.email, idx);
+  } else {
+    collectStepData(idx);
+    goToNextStep();
+  }
+}
+
+
 function addButtonToStep(stepElem, idx) {
   const isFinalStep = currentStepIdx === 22;
   const btn = isFinalStep
@@ -186,31 +202,25 @@ function addButtonToStep(stepElem, idx) {
   btn.classList.add("continue-btn");
 
   btn.addEventListener("click", () => {
-    if (!validateStep(idx)) return;
-
-    if (currentStepIdx === 4) {
-      emailModal(formData.email, idx);
-    } else {
-      collectStepData(idx);
-      goToNextStep();
-    }
+    submitStep(idx);
   });
 
   stepElem.append(btn);
 }
 
-function addEnterKeyHandler(form, stepElem) {
-  form?.addEventListener("keydown", (e) => {
-    if (e.key !== "Enter") return;
+function addEnterKeyHandler(idx) {
+  if (currentEnterHandler) {
+    document.removeEventListener("keydown", currentEnterHandler);
+  }
 
-    const tag = e.target.tagName.toLowerCase();
-    if (tag === "textarea" || tag === "button") return;
+  currentEnterHandler = function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      submitStep(idx);
+    }
+  };
 
-    e.preventDefault();
-
-    const continueBtn = stepElem.querySelector(".continue-btn");
-    if (continueBtn) continueBtn.click();
-  });
+  document.addEventListener("keydown", currentEnterHandler);
 }
 
 // === Email Modal ===
@@ -359,9 +369,10 @@ function initStep(idx) {
     addRadioChangeListeners(form, idx);
   }
 
-  form?.addEventListener("change", () => validateStep(idx));
+  form?.addEventListener("change", () => validateStep(idx, false))
 
-  addEnterKeyHandler(form, step[0]);
+
+  addEnterKeyHandler(idx);
 
   const ranges = getGroupRanges(steps);
   updateProgressBars(idx, ranges);

@@ -61,7 +61,7 @@
           <div id="step1">
             <form role="form">
               <div class="form__label-container">
-                <div class="form__label-icon"></div>
+                <div class="form__label-icon" data-field="loanAmount"></div>
                 <p>Desired loan amount</p>
               </div>
               <ul class="form__ul">
@@ -97,7 +97,7 @@
           <div id="step2">
             <form role="form">
               <div class="form__label-container">
-                <div class="form__label-icon"></div>
+                <div class="form__label-icon" data-field="considerLowerAmount"></div>
                 <p>Would you also consider a lower amount?</p>
               </div>
               <ul class="form__ul">
@@ -218,7 +218,7 @@
           <!-- Step 4: Where to send the loan confirmation? -->
           <div id="step4">
             <form role="form" class="flex padding-block">
-              <div class="form__label-icon icon--mail"></div>
+              <div class="form__label-icon icon--mail" data-field="email"></div>
               <label class="flex column width100">
                 <div class="form__label-container">
                   <p>Your Email</p>
@@ -238,7 +238,7 @@
           <div id="step5">
             <form role="form" class="flex column">
               <div class="flex">
-                <div class="form__label-icon icon--phone"></div>
+                <div class="form__label-icon icon--phone" data-field="phone"></div>
                 <div>
                   <label class="flex column width100">
                     <div class="form__label-container">
@@ -272,7 +272,7 @@
           <!-- Step 6: Please verify your identity. -->
           <div id="step6">
             <form role="form" class="flex padding-block">
-              <div class="form__label-icon icon--lock"></div>
+              <div class="form__label-icon icon--lock" data-field="ssnLast4"></div>
               <label class="flex column width100">
                 <div class="form__label-container">
                   <p>Last 4 digits of your SSN</p>
@@ -514,7 +514,7 @@
           <div id="step12">
             <form role="form">
               <div class="flex step-parent">
-                <div class="form__label-icon icon--work margin-top"></div>
+                <div class="form__label-icon icon--work margin-top" data-field="employerName"></div>
                 <label
                   class="form-step-divider width100 padding-block flex column"
                 >
@@ -531,7 +531,7 @@
                 </label>
               </div>
               <div class="flex step-parent">
-                <div class="form__label-icon icon--work margin-top"></div>
+                <div class="form__label-icon icon--work margin-top" data-field="jobTitle"></div>
                 <label
                   class="form-step-divider width100 padding-block flex column"
                 >
@@ -548,7 +548,7 @@
                 </label>
               </div>
               <div class="flex step-parent">
-                <div class="form__label-icon icon--work-mob margin-top"></div>
+                <div class="form__label-icon icon--work-mob margin-top" data-field="workPhone"></div>
                 <div class="flex column">
                   <label
                     class="form-step-divider width100 padding-block flex column"
@@ -831,7 +831,7 @@
             <form role="form">
               <div class="margin-top">
                 <div class="flex">
-                  <div class="form__label-icon icon--bank margin-top"></div>
+                  <div class="form__label-icon icon--bank margin-top" data-field="accountNumber"></div>
                   <label
                     class="alone-border width100 padding-block flex column"
                   >
@@ -850,7 +850,7 @@
                 </div>
 
                 <div class="flex align-center">
-                  <div class="form__label-icon icon--bank"></div>
+                  <div class="form__label-icon icon--bank" data-field="accountType"></div>
                   <div class="form__label-container">
                     <p>Account type</p>
                   </div>
@@ -858,7 +858,7 @@
                 <ul class="form__ul">
                   <li>
                     <label class="form__li-label">
-                      <input type="radio" name="accountType" value="savings" />
+                      <input type="radio" name="accountType" value="savings"/>
                       <div><p>Savings</p></div>
                     </label>
                   </li>
@@ -877,7 +877,7 @@
           <div id="step19">
             <form role="form">
               <div class="flex">
-                <div class="form__label-icon icon--bank margin-top"></div>
+                <div class="form__label-icon icon--bank margin-top" data-field="driverId"></div>
                 <label class="alone-border flex column width100 padding-block">
                   <div class="form__label-container">
                     <p>Driver's license or state id</p>
@@ -950,38 +950,38 @@
               </ul>
             </form>
           </div>
-        </div>
 
-        <!-- Step 21: Enter your SSN to complete your request -->
-        <div id="step21">
-          <form role="form" class="flex padding-block">
-            <div class="form__label-icon icon--lock"></div>
-            <label class="flex column width100">
-              <div class="form__label-container">
-                <p>Social Security Number</p>
-              </div>
-              <div class="form__text-input">
-                <input
-                  type="text"
-                  name="socialSecurityNumber"
-                  id="ssnInput"
-                  placeholder="___-__-____"
-                  maxlength="11"
-                  pattern="\d{3}-\d{2}-\d{4}"
-                  title="SSN should be in format 123-45-6789"
-                />
-              </div>
-              <p class="disclaimer">
-                It's required to protect you from fraudulent use of your
-                personal data
-              </p>
-            </label>
-          </form>
-        </div>
+          <!-- Step 21: Enter your SSN to complete your request -->
+          <div id="step21">
+            <form role="form" class="flex padding-block">
+              <div class="form__label-icon icon--lock"></div>
+              <label class="flex column width100">
+                <div class="form__label-container">
+                  <p>Social Security Number</p>
+                </div>
+                <div class="form__text-input">
+                  <input
+                    type="text"
+                    name="socialSecurityNumber"
+                    id="ssnInput"
+                    placeholder="___-__-____"
+                    maxlength="11"
+                    pattern="\d{3}-\d{2}-\d{4}"
+                    title="SSN should be in format 123-45-6789"
+                  />
+                </div>
+                <p class="disclaimer">
+                  It's required to protect you from fraudulent use of your
+                  personal data
+                </p>
+              </label>
+            </form>
+          </div>
 
-        <!-- Final step: Now, simply press the “Request Cash” button. You’re all set! -->
-        <div id="step22">
-          <form role="form"></form>
+          <!-- Final step: Now, simply press the “Request Cash” button. You’re all set! -->
+          <div id="step22">
+            <form role="form"></form>
+          </div>
         </div>
 
         <template id="continue-button-template">

@@ -63,11 +63,7 @@ const validations = {
     { field: "workPhone", test: isPhone, error: messages.phone },
   ],
   14: [
-    {
-      field: "paydayDate",
-      test: isRequired,
-      error: messages.required("date"),
-    },
+    { field: "paydayDate", test: isRequired, error: messages.required("date") },
   ],
   16: [
     { field: "routingNumber", test: isRoutingNumber, error: messages.routing },
@@ -75,13 +71,14 @@ const validations = {
   18: [
     { field: "accountNumber", test: isAccountNumber, error: messages.account },
   ],
-  21: [
-    { 
-      field: "socialSecurityNumber", 
-      test: isSSN, 
-      error: messages.ssnFull 
-    }
+  19: [
+    {
+      field: "driverId",
+      test: isRequired,
+      error: messages.required("Driver ID"),
+    },
   ],
+  21: [{ field: "socialSecurityNumber", test: isSSN, error: messages.ssnFull }],
 };
 
 const errorTemplate = document
@@ -90,69 +87,169 @@ const errorTemplate = document
 
 // Показ ошибки
 function showError(element, message) {
-  const container =
-    element.closest("label") || element.parentElement || element;
+  const container = element;
   let errorElem = container.querySelector(".form-error");
   if (!errorElem) {
     errorElem = errorTemplate.cloneNode(true);
     container.appendChild(errorElem);
   }
   errorElem.textContent = message;
-  updateIconState(currentStepIdx, { add: ["icon--evt-error"] });
 }
 
 // Очистка ошибки
 function clearError(element) {
-  const container =
-    element.closest("label") || element.parentElement || element;
+  const container = element;
   container.querySelector(".form-error")?.remove();
 }
 
+// Обновление состояния иконки
+function updateIconState(
+  stepContainer,
+  fieldName,
+  { add = [], remove = [] } = {}
+) {
+  let icon;
+  if (fieldName) {
+    icon = stepContainer.querySelector(
+      `.form__label-icon[data-field="${fieldName}"]`
+    );
+  }
+  if (!icon) {
+    icon = stepContainer.querySelector(".form__label-icon");
+  }
+  if (icon) {
+    add.forEach((cls) => icon.classList.add(cls));
+    remove.forEach((cls) => icon.classList.remove(cls));
+  }
+}
+
 // Валидация по шагам
-function validateStep(idx) {
-  const currentForm = getStepForm(getCurrentStep(idx));
-  if (!currentForm) return true;
+// Новая сигнатура: второй параметр — показывать ли ошибки
+// универсальный сеттер классов для иконки конкретного поля
+function setIconStateForField(stepContainer, field, { add = [], remove = [] }) {
+  // 1) Ищем icon с data-field
+  let icon = stepContainer.querySelector(`.form__label-icon[data-field="${field}"]`);
+  if (!icon) {
+    // 2) Ищем input[name=field], поднимаемся к .step-parent и достаём из него .form__label-icon
+    const input = stepContainer.querySelector(`[name="${field}"]`);
+    const stepParent = input?.closest('.step-parent');
+    icon = stepParent?.querySelector('.form__label-icon');
+  }
+  if (!icon) return;
+  icon.classList.remove(...remove);
+  icon.classList.add(...add);
+}
+
+function validateStep(idx, showErrors = true) {
+  const stepContainer = getCurrentStep(idx)[0];
+  if (!stepContainer) return true;
+
+  // 1) Найти ВСЕ иконки в шаге
+  const allIcons = Array.from(
+    stepContainer.querySelectorAll('.form__label-icon')
+  );
+  // sharedIcon — только если вообще ОДНА иконка
+  const sharedIcon = allIcons.length === 1 ? allIcons[0] : null;
 
   let valid = true;
-
   const stepValidations = validations[idx];
+
+  // --- Текстовые поля и select ---
   if (stepValidations) {
     for (const { field, test, error } of stepValidations) {
-      const input = currentForm.elements[field];
+      const input = stepContainer.querySelector(`[name="${field}"]`);
       const value = input?.value.trim();
-      if (!test(value)) {
-        showError(input, error);
+      const passed = test(value);
+      const target = input?.closest("label") || input?.parentElement;
+
+      // Управление сообщением
+      if (passed) {
+        if (showErrors) clearError(target);
+      } else {
         valid = false;
+        if (showErrors) showError(target, error);
+      }
+
+      // Если sharedIcon — отложить на потом
+      if (!sharedIcon) {
+        // иначе — per‑field
+        if (passed) {
+          setIconStateForField(stepContainer, field, {
+            add: ["icon--evt-sucess"],
+            remove: ["icon--evt-error"],
+          });
+        } else if (showErrors) {
+          setIconStateForField(stepContainer, field, {
+            add: ["icon--evt-error"],
+            remove: ["icon--evt-sucess"],
+          });
+        } else {
+          // мягкий + провал
+          setIconStateForField(stepContainer, field, {
+            add: [],
+            remove: ["icon--evt-sucess", "icon--evt-error"],
+          });
+        }
       }
     }
   }
 
-  // Проверка radio
-  const radioGroups = currentForm.querySelectorAll('input[type="radio"][name]');
-  if (radioGroups.length) {
-    const name = radioGroups[0].name;
-    if (!currentForm.elements[name].value) {
-      showError(getCurrentStep(idx)[0], "Please select an option.");
-      return false;
-    }
-  }
+  // --- Группы радио ---
+  const radios = stepContainer.querySelectorAll('input[type="radio"][name]');
+  const seen = new Set();
+  radios.forEach((r) => {
+    const name = r.name;
+    if (seen.has(name)) return;
+    seen.add(name);
 
-  if (valid) {
-    updateIconState(idx, { add: ["icon--evt-sucess"] });
-    clearError(getCurrentStep(idx)[0]);
-  } else {
-    updateIconState(idx, { remove: ["icon--evt-sucess"] });
+    const group = stepContainer.querySelectorAll(`input[name="${name}"]`);
+    const isChecked = [...group].some((x) => x.checked);
+    const container = r.closest(".form__ul");
+
+    if (isChecked) {
+      if (showErrors) clearError(container);
+    } else {
+      valid = false;
+      if (showErrors) showError(container, messages.radio);
+    }
+
+    if (!sharedIcon) {
+      if (isChecked) {
+        setIconStateForField(stepContainer, name, {
+          add: ["icon--evt-sucess"],
+          remove: ["icon--evt-error"],
+        });
+      } else if (showErrors) {
+        setIconStateForField(stepContainer, name, {
+          add: ["icon--evt-error"],
+          remove: ["icon--evt-sucess"],
+        });
+      } else {
+        setIconStateForField(stepContainer, name, {
+          add: [],
+          remove: ["icon--evt-sucess", "icon--evt-error"],
+        });
+      }
+    }
+  });
+
+  // --- Обновляем sharedIcon, если он есть ---
+  if (sharedIcon) {
+    if (valid) {
+      sharedIcon.classList.remove("icon--evt-error");
+      sharedIcon.classList.add("icon--evt-sucess");
+    } else if (showErrors) {
+      sharedIcon.classList.remove("icon--evt-sucess");
+      sharedIcon.classList.add("icon--evt-error");
+    } else {
+      sharedIcon.classList.remove("icon--evt-sucess", "icon--evt-error");
+    }
   }
 
   return valid;
 }
 
-// Универсальная функция для управления классами иконки
-function updateIconState(idx, { add = [], remove = [] } = {}) {
-  const currentForm = getStepForm(getCurrentStep(idx));
-  const icon = currentForm?.querySelector(".form__label-icon");
-  if (!icon) return;
 
-  add.forEach((cls) => icon.classList.add(cls));
-  remove.forEach((cls) => icon.classList.remove(cls));
-}
+
+
+
