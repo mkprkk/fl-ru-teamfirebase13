@@ -334,12 +334,12 @@ body {
 .form__text-input {
   font-weight: 400;
   font-size: 15px;
-  color: var(--form-additional-info-color2, #b8b8c1);
+  color: black;
 }
 
 /* --- Селекты и кастомные стрелки --- */
 .select-style {
-  color: var(--form-additional-info-color2, #b8b8c1);
+  color: black;
   font-size: 15px;
   cursor: pointer;
 }

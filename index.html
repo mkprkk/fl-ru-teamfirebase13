@@ -98,7 +98,10 @@
           <div id="step2">
             <form role="form">
               <div class="form__label-container">
-                <div class="form__label-icon" data-field="considerLowerAmount"></div>
+                <div
+                  class="form__label-icon"
+                  data-field="considerLowerAmount"
+                ></div>
                 <p>Would you also consider a lower amount?</p>
               </div>
               <ul class="form__ul">
@@ -143,9 +146,7 @@
                       name="loanPurpose"
                       value="bills_emergency"
                     />
-                    <span>
-                      Everyday Bills/Emergency
-                    </span>
+                    <span> Everyday Bills/Emergency </span>
                   </label>
                 </li>
                 <li>
@@ -221,9 +222,7 @@
             <form role="form" class="flex padding-block">
               <div class="form__label-icon icon--mail" data-field="email"></div>
               <label class="flex column width100">
-                <span class="form__label-container">
-                  Your Email
-                </span>
+                <span class="form__label-container"> Your Email </span>
                 <span class="form__text-input">
                   <input
                     type="email"
@@ -239,7 +238,10 @@
           <div id="step5">
             <form role="form" class="flex column">
               <div class="flex">
-                <div class="form__label-icon icon--phone" data-field="phone"></div>
+                <div
+                  class="form__label-icon icon--phone"
+                  data-field="phone"
+                ></div>
                 <div>
                   <label class="flex column width100">
                     <span class="form__label-container">
@@ -273,7 +275,10 @@
           <!-- Step 6: Please verify your identity. -->
           <div id="step6">
             <form role="form" class="flex padding-block">
-              <div class="form__label-icon icon--lock" data-field="ssnLast4"></div>
+              <div
+                class="form__label-icon icon--lock"
+                data-field="ssnLast4"
+              ></div>
               <label class="flex column width100">
                 <span class="form__label-container">
                   Last 4 digits of your SSN
@@ -307,7 +312,9 @@
                       class="ssn-lock"
                     />
                   </svg>
-                  <span class="disclaimer">This will NOT affect your credit</span>
+                  <span class="disclaimer"
+                    >This will NOT affect your credit</span
+                  >
                 </span>
               </label>
             </form>
@@ -319,9 +326,7 @@
               <div class="form__label-icon icon--name margin-top"></div>
               <div class="width100">
                 <label class="form-step-divider padding-block flex column">
-                  <span class="form__label-container">
-                    First Name
-                  </span>
+                  <span class="form__label-container"> First Name </span>
                   <span class="form__text-input">
                     <input
                       type="text"
@@ -331,9 +336,7 @@
                   </span>
                 </label>
                 <label class="form-step-divider padding-block flex column">
-                  <span class="form__label-container">
-                    Last Name
-                  </span>
+                  <span class="form__label-container"> Last Name </span>
                   <span class="form__text-input">
                     <input
                       type="text"
@@ -343,9 +346,7 @@
                   </span>
                 </label>
                 <label class="form-step-divider padding-block flex column">
-                  <span class="form__label-container">
-                    Date of Birth
-                  </span>
+                  <span class="form__label-container"> Date of Birth </span>
                   <span class="form__text-input">
                     <input
                       type="text"
@@ -366,21 +367,18 @@
               <div class="form__label-icon icon--location margin-top"></div>
               <div class="width100">
                 <label class="form-step-divider padding-block flex column">
-                  <span class="form__label-container">
-                    Zip Code
-                  </span>
+                  <span class="form__label-container"> Zip Code </span>
                   <span class="form__text-input">
                     <input
                       type="text"
                       name="zipCode"
                       placeholder="e.g. 90210"
+                      maxlength="5"
                     />
                   </span>
                 </label>
                 <label class="form-step-divider padding-block flex column">
-                  <span class="form__label-container">
-                    Street Address
-                  </span>
+                  <span class="form__label-container"> Street Address </span>
                   <span class="form__text-input">
                     <input
                       type="text"
@@ -515,13 +513,14 @@
           <div id="step12">
             <form role="form">
               <div class="flex step-parent">
-                <div class="form__label-icon icon--work margin-top" data-field="employerName"></div>
+                <div
+                  class="form__label-icon icon--work margin-top"
+                  data-field="employerName"
+                ></div>
                 <label
                   class="form-step-divider width100 padding-block flex column"
                 >
-                  <span class="form__label-container">
-                    Employer name
-                  </span>
+                  <span class="form__label-container"> Employer name </span>
                   <span class="form__text-input">
                     <input
                       type="text"
@@ -532,13 +531,14 @@
                 </label>
               </div>
               <div class="flex step-parent">
-                <div class="form__label-icon icon--work margin-top" data-field="jobTitle"></div>
+                <div
+                  class="form__label-icon icon--work margin-top"
+                  data-field="jobTitle"
+                ></div>
                 <label
                   class="form-step-divider width100 padding-block flex column"
                 >
-                  <span class="form__label-container">
-                    Job title
-                  </span>
+                  <span class="form__label-container"> Job title </span>
                   <span class="form__text-input">
                     <input
                       type="text"
@@ -549,14 +549,15 @@
                 </label>
               </div>
               <div class="flex step-parent">
-                <div class="form__label-icon icon--work-mob margin-top" data-field="workPhone"></div>
+                <div
+                  class="form__label-icon icon--work-mob margin-top"
+                  data-field="workPhone"
+                ></div>
                 <div class="flex column">
                   <label
                     class="form-step-divider width100 padding-block flex column"
                   >
-                    <span class="form__label-container">
-                      Work mobile
-                    </span>
+                    <span class="form__label-container"> Work mobile </span>
                     <span class="phone-input flex align-center">
                       <span class="phone-code">US +1</span>
                       <span class="form__text-input">
@@ -698,9 +699,10 @@
                     id="payFrequency"
                     name="payFrequency"
                   >
-                    <option value="weekly">Weekly</option>
-                    <option value="biweekly">Bi-Weekly</option>
+                    <option value="everyTwoWeeks">Every 2 weeks</option>
+                    <option value="twiceAMonth">Twice a month</option>
                     <option value="monthly">Monthly</option>
+                    <option value="weekly">Weekly</option>
                   </select>
                 </div>
               </div>
@@ -713,9 +715,13 @@
                     How is Your Paycheck Received?
                   </span>
                   <select class="select-style" name="payMethod">
-                    <option value="directDeposit">Direct Deposit</option>
-                    <option value="check">Check</option>
-                    <option value="cash">Cash</option>
+                    <option disabled="" hidden="" value="">
+                      Select an option
+                    </option>
+                    <option value="electronicDeposit">
+                      Electronic Deposit
+                    </option>
+                    <option value="paperCheck">Paper check</option>
                   </select>
                 </div>
               </div>
@@ -728,10 +734,17 @@
                     Monthly gross income
                   </span>
                   <select class="select-style" name="monthlyIncome">
-                    <option value="under1000">Under $1,000</option>
-                    <option value="1000-2000">$1,000 - $2,000</option>
-                    <option value="2000-3000">$2,000 - $3,000</option>
-                    <option value="over3000">Over $3,000</option>
+                    <option disabled="" hidden="" value="">
+                      Select an option
+                    </option>
+                    <option value="10000">More than $8,500</option>
+                    <option value="8500">$7,001 — $8,500</option>
+                    <option value="7000">$5,501 — $7,000</option>
+                    <option value="5500">$4,501 — $5,500</option>
+                    <option value="4500">$3,501 — $4,500</option>
+                    <option value="3500">$2,501 — $3,500</option>
+                    <option value="2500">$1,501 — $2,500</option>
+                    <option value="1500">Less than $1,500</option>
                   </select>
                 </div>
               </div>
@@ -833,7 +846,10 @@
             <form role="form">
               <div class="margin-top">
                 <div class="flex">
-                  <div class="form__label-icon icon--bank margin-top" data-field="accountNumber"></div>
+                  <div
+                    class="form__label-icon icon--bank margin-top"
+                    data-field="accountNumber"
+                  ></div>
                   <label
                     class="alone-border width100 padding-block flex column"
                   >
@@ -852,15 +868,16 @@
                 </div>
 
                 <div class="flex align-center">
-                  <div class="form__label-icon icon--bank" data-field="accountType"></div>
-                  <span class="form__label-container">
-                    Account type
-                  </span>
+                  <div
+                    class="form__label-icon icon--bank"
+                    data-field="accountType"
+                  ></div>
+                  <span class="form__label-container"> Account type </span>
                 </div>
                 <ul class="form__ul">
                   <li>
                     <label class="form__li-label">
-                      <input type="radio" name="accountType" value="savings"/>
+                      <input type="radio" name="accountType" value="savings" />
                       <span>Savings</span>
                     </label>
                   </li>
@@ -879,7 +896,10 @@
           <div id="step19">
             <form role="form">
               <div class="flex">
-                <div class="form__label-icon icon--bank margin-top" data-field="driverId"></div>
+                <div
+                  class="form__label-icon icon--bank margin-top"
+                  data-field="driverId"
+                ></div>
                 <label class="alone-border flex column width100 padding-block">
                   <span class="form__label-container">
                     Driver's license or state id
@@ -897,13 +917,58 @@
               <div class="flex">
                 <div class="form__label-icon icon--bank margin-top"></div>
                 <div class="select-arrow flex column width100 padding-block">
-                  <span class="form__label-container">
-                    Issuing state
-                  </span>
+                  <span class="form__label-container"> Issuing state </span>
                   <select class="select-style" name="issuingState">
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
                   </select>
                 </div>
               </div>
@@ -1089,8 +1154,12 @@
         <p class="email"></p>
       </div>
       <div class="email-dialog__button-container align-center flex">
-        <button class="email-dialog__button-confirm"><span class="email__text-button">Confirm</span></button>
-        <button class="email-dialog__button-edit"><span class="email__text-button">Edit</span></button>
+        <button class="email-dialog__button-confirm">
+          <span class="email__text-button">Confirm</span>
+        </button>
+        <button class="email-dialog__button-edit">
+          <span class="email__text-button">Edit</span>
+        </button>
       </div>
     </dialog>
     <script src="./scrips/initForm.js"></script>
