@@ -35,6 +35,7 @@
             <img
               class="employee__photo"
               src="./assets/images/png/008393881a51e16ceea4444e728a41c80def3ce9.png"
+              alt="Image of employee"
             />
             <div class="employee__online"></div>
           </div>
@@ -68,25 +69,25 @@
                 <li>
                   <label class="form__li-label">
                     <input type="radio" name="loanAmount" value="200-500" />
-                    <div><p>$200 — $500</p></div>
+                    <span>$200 — $500</span>
                   </label>
                 </li>
                 <li>
                   <label class="form__li-label">
                     <input type="radio" name="loanAmount" value="500-1000" />
-                    <div><p>$500 — $1,000</p></div>
+                    <span>$500 — $1,000</span>
                   </label>
                 </li>
                 <li>
                   <label class="form__li-label">
                     <input type="radio" name="loanAmount" value="1000-2500" />
-                    <div><p>$1,000 — $2,500</p></div>
+                    <span>$1,000 — $2,500</span>
                   </label>
                 </li>
                 <li>
                   <label class="form__li-label">
                     <input type="radio" name="loanAmount" value="2500-5000" />
-                    <div><p>$2,500 — $5,000</p></div>
+                    <span>$2,500 — $5,000</span>
                   </label>
                 </li>
               </ul>
@@ -104,7 +105,7 @@
                 <li>
                   <label class="form__li-label">
                     <input type="radio" name="considerLowerAmount" value="no" />
-                    <div><p>No</p></div>
+                    <span>No</span>
                   </label>
                 </li>
                 <li>
@@ -114,7 +115,7 @@
                       name="considerLowerAmount"
                       value="yes"
                     />
-                    <div><p>Yes</p></div>
+                    <span>Yes</span>
                   </label>
                 </li>
               </ul>
@@ -132,7 +133,7 @@
                       name="loanPurpose"
                       value="debt_consolidation"
                     />
-                    <div><p>Debt consolidation</p></div>
+                    <span>Debt consolidation</span>
                   </label>
                 </li>
                 <li>
@@ -142,9 +143,9 @@
                       name="loanPurpose"
                       value="bills_emergency"
                     />
-                    <div>
-                      <p>Everyday Bills/Emergency</p>
-                    </div>
+                    <span>
+                      Everyday Bills/Emergency
+                    </span>
                   </label>
                 </li>
                 <li>
@@ -154,7 +155,7 @@
                       name="loanPurpose"
                       value="credit_card_consolidation"
                     />
-                    <div><p>Credit card consolidation</p></div>
+                    <span>Credit card consolidation</span>
                   </label>
                 </li>
                 <li>
@@ -164,7 +165,7 @@
                       name="loanPurpose"
                       value="auto_purchase"
                     />
-                    <div><p>Auto purchase</p></div>
+                    <span>Auto purchase</span>
                   </label>
                 </li>
                 <li>
@@ -174,25 +175,25 @@
                       name="loanPurpose"
                       value="home_improvement"
                     />
-                    <div><p>Home improvement</p></div>
+                    <span>Home improvement</span>
                   </label>
                 </li>
                 <li>
                   <label class="form__li-label">
                     <input type="radio" name="loanPurpose" value="medical" />
-                    <div><p>Medical</p></div>
+                    <span>Medical</span>
                   </label>
                 </li>
                 <li>
                   <label class="form__li-label">
                     <input type="radio" name="loanPurpose" value="business" />
-                    <div><p>Business</p></div>
+                    <span>Business</span>
                   </label>
                 </li>
                 <li>
                   <label class="form__li-label">
                     <input type="radio" name="loanPurpose" value="taxes" />
-                    <div><p>Taxes</p></div>
+                    <span>Taxes</span>
                   </label>
                 </li>
                 <li>
@@ -202,13 +203,13 @@
                       name="loanPurpose"
                       value="rent_mortgage"
                     />
-                    <div><p>Rent or mortgage</p></div>
+                    <span>Rent or mortgage</span>
                   </label>
                 </li>
                 <li>
                   <label class="form__li-label">
                     <input type="radio" name="loanPurpose" value="other" />
-                    <div><p>Other</p></div>
+                    <span>Other</span>
                   </label>
                 </li>
               </ul>
@@ -220,16 +221,16 @@
             <form role="form" class="flex padding-block">
               <div class="form__label-icon icon--mail" data-field="email"></div>
               <label class="flex column width100">
-                <div class="form__label-container">
-                  <p>Your Email</p>
-                </div>
-                <div class="form__text-input">
+                <span class="form__label-container">
+                  Your Email
+                </span>
+                <span class="form__text-input">
                   <input
                     type="email"
                     name="email"
                     placeholder="e.g. johnsmith@gmail.com"
                   />
-                </div>
+                </span>
               </label>
             </form>
           </div>
@@ -241,20 +242,20 @@
                 <div class="form__label-icon icon--phone" data-field="phone"></div>
                 <div>
                   <label class="flex column width100">
-                    <div class="form__label-container">
-                      <p>Your current phone number is</p>
-                    </div>
-                    <div class="phone-input flex align-center">
-                      <p class="phone-code">US +1</p>
-                      <div class="form__text-input">
+                    <span class="form__label-container">
+                      Your current phone number is
+                    </span>
+                    <span class="phone-input flex align-center">
+                      <span class="phone-code">US +1</span>
+                      <span class="form__text-input">
                         <input
                           type="tel"
                           name="phone"
                           placeholder="Enter mobile number"
                           maxlength="10"
                         />
-                      </div>
-                    </div>
+                      </span>
+                    </span>
                   </label>
                   <p class="phone-disclaimer">
                     Your phone is never shared without permission
@@ -274,14 +275,14 @@
             <form role="form" class="flex padding-block">
               <div class="form__label-icon icon--lock" data-field="ssnLast4"></div>
               <label class="flex column width100">
-                <div class="form__label-container">
-                  <p>Last 4 digits of your SSN</p>
-                </div>
-                <div class="ssn-input-container flex">
-                  <p class="card-code">×××-××-</p>
+                <span class="form__label-container">
+                  Last 4 digits of your SSN
+                </span>
+                <span class="ssn-input-container flex">
+                  <span class="card-code">×××-××-</span>
                   <input name="ssnLast4" class="ssn-input" maxlength="4" />
-                </div>
-                <div class="flex align-center" style="gap: 8px">
+                </span>
+                <span class="flex align-center" style="gap: 8px">
                   <svg
                     width="14"
                     height="14"
@@ -306,8 +307,8 @@
                       class="ssn-lock"
                     />
                   </svg>
-                  <p class="disclaimer">This will NOT affect your credit</p>
-                </div>
+                  <span class="disclaimer">This will NOT affect your credit</span>
+                </span>
               </label>
             </form>
           </div>
@@ -318,34 +319,34 @@
               <div class="form__label-icon icon--name margin-top"></div>
               <div class="width100">
                 <label class="form-step-divider padding-block flex column">
-                  <div class="form__label-container">
-                    <p>First Name</p>
-                  </div>
-                  <div class="form__text-input">
+                  <span class="form__label-container">
+                    First Name
+                  </span>
+                  <span class="form__text-input">
                     <input
                       type="text"
                       name="firstName"
                       placeholder="e.g. John"
                     />
-                  </div>
+                  </span>
                 </label>
                 <label class="form-step-divider padding-block flex column">
-                  <div class="form__label-container">
-                    <p>Last Name</p>
-                  </div>
-                  <div class="form__text-input">
+                  <span class="form__label-container">
+                    Last Name
+                  </span>
+                  <span class="form__text-input">
                     <input
                       type="text"
                       name="lastName"
                       placeholder="e.g. Smith"
                     />
-                  </div>
+                  </span>
                 </label>
                 <label class="form-step-divider padding-block flex column">
-                  <div class="form__label-container">
-                    <p>Date of Birth</p>
-                  </div>
-                  <div class="form__text-input">
+                  <span class="form__label-container">
+                    Date of Birth
+                  </span>
+                  <span class="form__text-input">
                     <input
                       type="text"
                       name="dateOfBirth"
@@ -353,7 +354,7 @@
                       class="date-input"
                       maxlength="14"
                     />
-                  </div>
+                  </span>
                 </label>
               </div>
             </form>
@@ -365,28 +366,28 @@
               <div class="form__label-icon icon--location margin-top"></div>
               <div class="width100">
                 <label class="form-step-divider padding-block flex column">
-                  <div class="form__label-container">
-                    <p>Zip Code</p>
-                  </div>
-                  <div class="form__text-input">
+                  <span class="form__label-container">
+                    Zip Code
+                  </span>
+                  <span class="form__text-input">
                     <input
                       type="text"
                       name="zipCode"
                       placeholder="e.g. 90210"
                     />
-                  </div>
+                  </span>
                 </label>
                 <label class="form-step-divider padding-block flex column">
-                  <div class="form__label-container">
-                    <p>Street Address</p>
-                  </div>
-                  <div class="form__text-input">
+                  <span class="form__label-container">
+                    Street Address
+                  </span>
+                  <span class="form__text-input">
                     <input
                       type="text"
                       name="streetAddress"
                       placeholder="e.g. 123 Main st"
                     />
-                  </div>
+                  </span>
                 </label>
               </div>
             </form>
@@ -403,7 +404,7 @@
                       name="residenceDuration"
                       value="over_5_years"
                     />
-                    <div><p>Over 5 Years</p></div>
+                    <span>Over 5 Years</span>
                   </label>
                 </li>
                 <li>
@@ -413,7 +414,7 @@
                       name="residenceDuration"
                       value="2_5_years"
                     />
-                    <div><p>2 to 5 Years</p></div>
+                    <span>2 to 5 Years</span>
                   </label>
                 </li>
                 <li>
@@ -423,7 +424,7 @@
                       name="residenceDuration"
                       value="1_2_years"
                     />
-                    <div><p>1 to 2 Years</p></div>
+                    <span>1 to 2 Years</span>
                   </label>
                 </li>
                 <li>
@@ -433,7 +434,7 @@
                       name="residenceDuration"
                       value="less_than_year"
                     />
-                    <div><p>Less Than A Year</p></div>
+                    <span>Less Than A Year</span>
                   </label>
                 </li>
               </ul>
@@ -447,13 +448,13 @@
                 <li>
                   <label class="form__li-label">
                     <input type="radio" name="residenceType" value="rent" />
-                    <div><p>Rent</p></div>
+                    <span>Rent</span>
                   </label>
                 </li>
                 <li>
                   <label class="form__li-label">
                     <input type="radio" name="residenceType" value="own" />
-                    <div><p>Own</p></div>
+                    <span>Own</span>
                   </label>
                 </li>
                 <li>
@@ -463,7 +464,7 @@
                       name="residenceType"
                       value="with_parents"
                     />
-                    <div><p>I live with parents or relatives</p></div>
+                    <span>I live with parents or relatives</span>
                   </label>
                 </li>
               </ul>
@@ -477,7 +478,7 @@
                 <li>
                   <label class="form__li-label">
                     <input type="radio" name="incomeType" value="job_income" />
-                    <div><p>Job income</p></div>
+                    <span>Job income</span>
                   </label>
                 </li>
                 <li>
@@ -487,13 +488,13 @@
                       name="incomeType"
                       value="self_employment"
                     />
-                    <div><p>Self employement</p></div>
+                    <span>Self employement</span>
                   </label>
                 </li>
                 <li>
                   <label class="form__li-label">
                     <input type="radio" name="incomeType" value="benefits" />
-                    <div><p>Benefits</p></div>
+                    <span>Benefits</span>
                   </label>
                 </li>
                 <li>
@@ -503,7 +504,7 @@
                       name="incomeType"
                       value="military_pay"
                     />
-                    <div><p>Military Pay</p></div>
+                    <span>Military Pay</span>
                   </label>
                 </li>
               </ul>
@@ -518,16 +519,16 @@
                 <label
                   class="form-step-divider width100 padding-block flex column"
                 >
-                  <div class="form__label-container">
-                    <p>Employer name</p>
-                  </div>
-                  <div class="form__text-input">
+                  <span class="form__label-container">
+                    Employer name
+                  </span>
+                  <span class="form__text-input">
                     <input
                       type="text"
                       name="employerName"
                       placeholder="e.g. Company"
                     />
-                  </div>
+                  </span>
                 </label>
               </div>
               <div class="flex step-parent">
@@ -535,16 +536,16 @@
                 <label
                   class="form-step-divider width100 padding-block flex column"
                 >
-                  <div class="form__label-container">
-                    <p>Job title</p>
-                  </div>
-                  <div class="form__text-input">
+                  <span class="form__label-container">
+                    Job title
+                  </span>
+                  <span class="form__text-input">
                     <input
                       type="text"
                       name="jobTitle"
                       placeholder="e.g. Manager"
                     />
-                  </div>
+                  </span>
                 </label>
               </div>
               <div class="flex step-parent">
@@ -553,23 +554,23 @@
                   <label
                     class="form-step-divider width100 padding-block flex column"
                   >
-                    <div class="form__label-container">
-                      <p>Work mobile</p>
-                    </div>
-                    <div class="phone-input flex align-center">
-                      <p class="phone-code">US +1</p>
-                      <div class="form__text-input">
+                    <span class="form__label-container">
+                      Work mobile
+                    </span>
+                    <span class="phone-input flex align-center">
+                      <span class="phone-code">US +1</span>
+                      <span class="form__text-input">
                         <input
                           type="tel"
                           name="workPhone"
                           placeholder="Enter mobile number"
                           maxlength="10"
                         />
-                      </div>
-                    </div>
-                    <p class="phone-disclaimer">
+                      </span>
+                    </span>
+                    <span class="phone-disclaimer">
                       We never contact your employer
-                    </p>
+                    </span>
                   </label>
                 </div>
               </div>
@@ -587,7 +588,7 @@
                       name="employmentDuration"
                       value="5_years_or_more"
                     />
-                    <div><p>5 Years or more</p></div>
+                    <span>5 Years or more</span>
                   </label>
                 </li>
                 <li>
@@ -597,7 +598,7 @@
                       name="employmentDuration"
                       value="3_4_years"
                     />
-                    <div><p>3 – 4 Years</p></div>
+                    <span>3 – 4 Years</span>
                   </label>
                 </li>
                 <li>
@@ -607,7 +608,7 @@
                       name="employmentDuration"
                       value="1_2_years"
                     />
-                    <div><p>1 – 2 Years</p></div>
+                    <span>1 – 2 Years</span>
                   </label>
                 </li>
                 <li>
@@ -617,7 +618,7 @@
                       name="employmentDuration"
                       value="3_12_months"
                     />
-                    <div><p>3 – 12 Months</p></div>
+                    <span>3 – 12 Months</span>
                   </label>
                 </li>
                 <li>
@@ -627,7 +628,7 @@
                       name="employmentDuration"
                       value="3_months_or_less"
                     />
-                    <div><p>3 Months or less</p></div>
+                    <span>3 Months or less</span>
                   </label>
                 </li>
               </ul>
@@ -689,9 +690,9 @@
                 <div
                   class="select-arrow form-step-divider width100 flex column padding-block"
                 >
-                  <div class="form__label-container">
-                    <p>How Often Are You Paid?</p>
-                  </div>
+                  <span class="form__label-container">
+                    How Often Are You Paid?
+                  </span>
                   <select
                     class="select-style"
                     id="payFrequency"
@@ -708,9 +709,9 @@
                 <div
                   class="select-arrow form-step-divider width100 flex column padding-block"
                 >
-                  <div class="form__label-container">
-                    <p>How is Your Paycheck Received?</p>
-                  </div>
+                  <span class="form__label-container">
+                    How is Your Paycheck Received?
+                  </span>
                   <select class="select-style" name="payMethod">
                     <option value="directDeposit">Direct Deposit</option>
                     <option value="check">Check</option>
@@ -723,9 +724,9 @@
                 <div
                   class="select-arrow form-step-divider width100 flex column padding-block"
                 >
-                  <div class="form__label-container">
-                    <p>Monthly gross income</p>
-                  </div>
+                  <span class="form__label-container">
+                    Monthly gross income
+                  </span>
                   <select class="select-style" name="monthlyIncome">
                     <option value="under1000">Under $1,000</option>
                     <option value="1000-2000">$1,000 - $2,000</option>
@@ -743,20 +744,21 @@
               <img
                 src="./assets/images/svg/example.svg"
                 style="padding-block: 16px"
+                alt="Example of bank routing number"
               />
               <div class="flex padding-block">
                 <div class="form__label-icon icon--bank"></div>
                 <label class="flex column">
-                  <div class="form__label-container">
-                    <p>Bank Routing Number</p>
-                  </div>
-                  <div class="routing-input form__text-input">
+                  <span class="form__label-container">
+                    Bank Routing Number
+                  </span>
+                  <span class="routing-input form__text-input">
                     <input type="text" name="routingNumber" maxlength="9" />
-                  </div>
-                  <p class="disclaimer">
+                  </span>
+                  <span class="disclaimer">
                     Your ABA/Routing number can be found on most bank statements
                     as well as on the bottom of your checks.
-                  </p>
+                  </span>
                 </label>
               </div>
             </form>
@@ -773,13 +775,13 @@
                       name="bankDuration"
                       value="more_2_years"
                     />
-                    <div><p>More than 2 years</p></div>
+                    <span>More than 2 years</span>
                   </label>
                 </li>
                 <li>
                   <label class="form__li-label">
                     <input type="radio" name="bankDuration" value="1_2_years" />
-                    <div><p>1 – 2 years</p></div>
+                    <span>1 – 2 years</span>
                   </label>
                 </li>
                 <li>
@@ -789,7 +791,7 @@
                       name="bankDuration"
                       value="6_12_months"
                     />
-                    <div><p>6 – 12 Months</p></div>
+                    <span>6 – 12 Months</span>
                   </label>
                 </li>
                 <li>
@@ -799,7 +801,7 @@
                       name="bankDuration"
                       value="3_6_months"
                     />
-                    <div><p>3 – 6 Months</p></div>
+                    <span>3 – 6 Months</span>
                   </label>
                 </li>
                 <li>
@@ -809,7 +811,7 @@
                       name="bankDuration"
                       value="1_3_months"
                     />
-                    <div><p>1 – 3 Months</p></div>
+                    <span>1 – 3 Months</span>
                   </label>
                 </li>
                 <li>
@@ -819,7 +821,7 @@
                       name="bankDuration"
                       value="less_1_month"
                     />
-                    <div><p>Less than 1 Month</p></div>
+                    <span>Less than 1 Month</span>
                   </label>
                 </li>
               </ul>
@@ -835,37 +837,37 @@
                   <label
                     class="alone-border width100 padding-block flex column"
                   >
-                    <div class="form__label-container">
-                      <p>Bank Account Number</p>
-                    </div>
-                    <div class="form__text-input">
+                    <span class="form__label-container">
+                      Bank Account Number
+                    </span>
+                    <span class="form__text-input">
                       <input
                         type="text"
                         name="accountNumber"
                         placeholder="4 to 30 digits"
                         maxlength="30"
                       />
-                    </div>
+                    </span>
                   </label>
                 </div>
 
                 <div class="flex align-center">
                   <div class="form__label-icon icon--bank" data-field="accountType"></div>
-                  <div class="form__label-container">
-                    <p>Account type</p>
-                  </div>
+                  <span class="form__label-container">
+                    Account type
+                  </span>
                 </div>
                 <ul class="form__ul">
                   <li>
                     <label class="form__li-label">
                       <input type="radio" name="accountType" value="savings"/>
-                      <div><p>Savings</p></div>
+                      <span>Savings</span>
                     </label>
                   </li>
                   <li>
                     <label class="form__li-label">
                       <input type="radio" name="accountType" value="checking" />
-                      <div><p>Checking</p></div>
+                      <span>Checking</span>
                     </label>
                   </li>
                 </ul>
@@ -879,30 +881,29 @@
               <div class="flex">
                 <div class="form__label-icon icon--bank margin-top" data-field="driverId"></div>
                 <label class="alone-border flex column width100 padding-block">
-                  <div class="form__label-container">
-                    <p>Driver's license or state id</p>
-                  </div>
-                  <div class="form__text-input">
+                  <span class="form__label-container">
+                    Driver's license or state id
+                  </span>
+                  <span class="form__text-input">
                     <input
                       type="text"
                       name="driverId"
                       placeholder="e.g. 123456789"
                       maxlength="9"
                     />
-                  </div>
+                  </span>
                 </label>
               </div>
               <div class="flex">
                 <div class="form__label-icon icon--bank margin-top"></div>
                 <div class="select-arrow flex column width100 padding-block">
-                  <div class="form__label-container">
-                    <p>Issuing state</p>
-                  </div>
+                  <span class="form__label-container">
+                    Issuing state
+                  </span>
                   <select class="select-style" name="issuingState">
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
-                    <!-- ...добавьте остальные штаты... -->
                   </select>
                 </div>
               </div>
@@ -920,31 +921,31 @@
                 <li>
                   <label class="form__li-label">
                     <input type="radio" name="creditScore" value="poor" />
-                    <div><p>Poor (639 or less)</p></div>
+                    <span>Poor (639 or less)</span>
                   </label>
                 </li>
                 <li>
                   <label class="form__li-label">
                     <input type="radio" name="creditScore" value="fair" />
-                    <div><p>Fair (640 – 679)</p></div>
+                    <span>Fair (640 – 679)</span>
                   </label>
                 </li>
                 <li>
                   <label class="form__li-label">
                     <input type="radio" name="creditScore" value="good" />
-                    <div><p>Good (680 – 719)</p></div>
+                    <span>Good (680 – 719)</span>
                   </label>
                 </li>
                 <li>
                   <label class="form__li-label">
                     <input type="radio" name="creditScore" value="excellent" />
-                    <div><p>Excellent (720 +)</p></div>
+                    <span>Excellent (720 +)</span>
                   </label>
                 </li>
                 <li>
                   <label class="form__li-label">
                     <input type="radio" name="creditScore" value="unknown" />
-                    <div><p>I don't know</p></div>
+                    <span>I don't know</span>
                   </label>
                 </li>
               </ul>
@@ -956,10 +957,10 @@
             <form role="form" class="flex padding-block">
               <div class="form__label-icon icon--lock"></div>
               <label class="flex column width100">
-                <div class="form__label-container">
-                  <p>Social Security Number</p>
-                </div>
-                <div class="form__text-input">
+                <span class="form__label-container">
+                  Social Security Number
+                </span>
+                <span class="form__text-input">
                   <input
                     type="text"
                     name="socialSecurityNumber"
@@ -969,11 +970,11 @@
                     pattern="\d{3}-\d{2}-\d{4}"
                     title="SSN should be in format 123-45-6789"
                   />
-                </div>
-                <p class="disclaimer">
+                </span>
+                <span class="disclaimer">
                   It's required to protect you from fraudulent use of your
                   personal data
-                </p>
+                </span>
               </label>
             </form>
           </div>
@@ -1088,14 +1089,13 @@
         <p class="email"></p>
       </div>
       <div class="email-dialog__button-container align-center flex">
-        <button class="email-dialog__button-confirm"><p>Confirm</p></button>
-        <button class="email-dialog__button-edit"><p>Edit</p></button>
+        <button class="email-dialog__button-confirm"><span class="email__text-button">Confirm</span></button>
+        <button class="email-dialog__button-edit"><span class="email__text-button">Edit</span></button>
       </div>
     </dialog>
     <script src="./scrips/initForm.js"></script>
     <script src="./scrips/handleErrors.js"></script>
     <script src="./scrips/utils.js"></script>
     <script src="./scrips/calendar.js"></script>
-    <script src="./scrips/pre-screen.js"></script>
   </body>
 </html>

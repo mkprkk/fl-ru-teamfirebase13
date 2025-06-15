@@ -101,8 +101,6 @@ body {
   width: 100%;
   padding: 32px;
   display: grid;
-  grid-template-rows: repeat(1fr, 2);
-  grid-template-columns: repeat(1fr, 2);
   gap: 9px;
   justify-content: space-between;
   transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out,
@@ -130,7 +128,6 @@ body {
   grid-row: 2;
   grid-column: span 2;
   position: relative;
-  transition: transform s;
   overflow: hidden;
 }
 
@@ -402,24 +399,24 @@ body {
   font-size: 15px;
 }
 
-.form__li-label div {
+.form__li-label span {
   width: 100%;
   padding-block: 10px;
 }
 
-.form__li-label p {
+.form__li-label span {
   font-weight: 400;
   transition: color 0.125s, scale 0.125s;
 }
-.form__li-label:hover p {
+.form__li-label:hover span {
   color: rgb(79, 79, 255);
   cursor: pointer;
 }
-.form__li-label:active p {
+.form__li-label:active span {
   color: gray;
   scale: 0.97;
 }
-.form__ul li:not(:last-child) label div {
+.form__ul li:not(:last-child) label span {
   border-bottom: 1px solid var(--form-border-color, #e2e2ea);
 }
 .form__li-label input[type="radio"] {
@@ -524,16 +521,6 @@ body:has(.email-dialog[open]) {
 
 .email-dialog__button-container button:active {
   filter: brightness(0.95);
-}
-
-.email-dialog__button-container button p {
-  scale: 1;
-  transition: scale 0.2s, color 0.2s;
-}
-
-.email-dialog__button-container button:active p {
-  color: rgb(216, 216, 216);
-  scale: 0.9;
 }
 
 .email-dialog__button-confirm {
